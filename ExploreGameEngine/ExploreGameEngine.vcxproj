@@ -41,9 +41,11 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <IncludePath>C:\DevLib\Horde3D\Horde3D_SDK_1.0.0_Beta5\Horde3D\Bindings\C++;C:\DevLib\Horde3D\Horde3D_SDK_1.0.0_Beta5\Horde3D\Samples\glfw;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\DevLib\Horde3D\Horde3D_SDK_1.0.0_Beta5\Horde3D\Bindings\C++;C:\DevLib\Horde3D\Horde3D_SDK_1.0.0_Beta5\Horde3D\Samples\glfw;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <IncludePath>C:\DevLib\Horde3D\Horde3D_SDK_1.0.0_Beta5\Horde3D\Bindings\C++;C:\DevLib\Horde3D\Horde3D_SDK_1.0.0_Beta5\Horde3D\Samples\glfw;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\DevLib\Horde3D\Horde3D_SDK_1.0.0_Beta5\Horde3D\Bindings\C++;C:\DevLib\Horde3D\Horde3D_SDK_1.0.0_Beta5\Horde3D\Samples\glfw;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -52,7 +54,7 @@
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>GLFW.lib;OpenGL32.lib;Horde3D_vc8.lib;Horde3DUtils_vc8.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>glfw.lib;OpenGL32.lib;Horde3D_vc8.lib;Horde3DUtils_vc8.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
