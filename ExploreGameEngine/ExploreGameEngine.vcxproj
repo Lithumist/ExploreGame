@@ -40,12 +40,12 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>C:\DevLib\Horde3D\Horde3D_SDK_1.0.0_Beta5\Horde3D\Bindings\C++;C:\DevLib\Horde3D\Horde3D_SDK_1.0.0_Beta5\Horde3D\Samples\glfw;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\DevLib\Horde3D\Horde3D_SDK_1.0.0_Beta5\Horde3D\Bindings\C++;C:\DevLib\Horde3D\Horde3D_SDK_1.0.0_Beta5\Horde3D\Samples\glfw;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\DevLib\Irrlicht\irrlicht-1.8\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\DevLib\Irrlicht\irrlicht-1.8\lib\Win32-visualstudio;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <IncludePath>C:\DevLib\Horde3D\Horde3D_SDK_1.0.0_Beta5\Horde3D\Bindings\C++;C:\DevLib\Horde3D\Horde3D_SDK_1.0.0_Beta5\Horde3D\Samples\glfw;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\DevLib\Horde3D\Horde3D_SDK_1.0.0_Beta5\Horde3D\Bindings\C++;C:\DevLib\Horde3D\Horde3D_SDK_1.0.0_Beta5\Horde3D\Samples\glfw;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\DevLib\Irrlicht\irrlicht-1.8\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\DevLib\Irrlicht\irrlicht-1.8\lib\Win32-visualstudio;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -54,7 +54,7 @@
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>glfw.lib;OpenGL32.lib;Horde3D_vc8.lib;Horde3DUtils_vc8.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>Irrlicht.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -68,7 +68,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>GLFW.lib;OpenGL32.lib;Horde3D_vc8.lib;Horde3DUtils_vc8.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>Irrlicht.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
