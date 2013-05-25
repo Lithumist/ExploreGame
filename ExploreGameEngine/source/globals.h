@@ -29,8 +29,19 @@ namespace eg
 	{
 	public:
 
+		// state info
+		int current_state;
+
 		// window info
 		std::wstring window_caption;
+		unsigned int window_width;
+		unsigned int window_height;
+
+		// irrlicht core objects
+		IrrlichtDevice* device;
+		IVideoDriver* driver;
+		ISceneManager* smgr;
+		IGUIEnvironment* guienv;
 
 		// fonts
 		IGUIFont* fnt_trololol;
