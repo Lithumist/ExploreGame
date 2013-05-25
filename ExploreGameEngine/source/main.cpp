@@ -34,6 +34,26 @@ int main()
 
 
 
+	IAnimatedMesh* mesh = smgr->getMesh("res/sydney.md2");
+	if(!mesh)
+	{
+		device->drop();
+		return 2;
+	}
+	
+	IAnimatedMeshSceneNode* node = smgr->addAnimatedMeshSceneNode(mesh);
+
+
+	if(node)
+	{
+		node->setMaterialFlag(EMF_LIGHTING, false);
+		node->setMD2Animation(scene::EMAT_STAND);
+		node->setMaterialTexture(0, driver->getTexture("res/sydney.bmp"));
+	}
+
+
+
+
 	smgr->addCameraSceneNode(0, vector3df(0,30,-40), vector3df(0,5,0));
 
 
@@ -43,6 +63,7 @@ int main()
 	{
 		driver->beginScene(true, true, SColor(255,100,101,140));
 
+		smgr->drawAll();
 		guienv->drawAll();
 
 		driver->endScene();
@@ -50,9 +71,9 @@ int main()
 
 
 
+
+
 	device->drop();
-
-
 	return 0;
 
 
