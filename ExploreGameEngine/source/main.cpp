@@ -15,22 +15,44 @@ using namespace gui;
 
 
 
+
+
+
+#include "globals.h"
+
+
+
 int main()
 {
-	IrrlichtDevice* device=createDevice(video::EDT_SOFTWARE, dimension2d<u32>(640,480), 16, false, false, false, 0);
+	// Create global struct
+	eg::global GlobalData;
 
+
+	// Create the window and set caption
+	IrrlichtDevice* device=createDevice(video::EDT_SOFTWARE, dimension2d<u32>(640,480), 16, false, false, false, 0);
 	if(!device)
 		return 1;
 
-	device->setWindowCaption(L"Hello World!");
+	GlobalData.window_caption = L"ExploreGame";
+	device->setWindowCaption(GlobalData.window_caption.c_str());
 
 	IVideoDriver* driver = device->getVideoDriver();
 	ISceneManager* smgr = device->getSceneManager();
 	IGUIEnvironment* guienv = device->getGUIEnvironment();
 
 
+	// - - - - - - - - - - - - -
+	//   Load basic resources
+	// - - - - - - - - - - - - -
 
-	guienv->addStaticText(L"LOL IM DOING STUFF!!1!", rect<s32>(10,10,260,22), true);
+	// Load fonts
+	GlobalData.fnt_trololol = NULL;
+	GlobalData.fnt_trololol = guienv->getFont("res/fonts/trololol.xml");
+	if(GlobalData.fnt_trololol == NULL)
+	{
+		device->drop();
+		return 2;
+	}
 
 
 
@@ -64,7 +86,8 @@ int main()
 		driver->beginScene(true, true, SColor(255,100,101,140));
 
 		smgr->drawAll();
-		guienv->drawAll();
+
+		GlobalData.fnt_trololol->draw(L"Explore Game",rect<s32>(64,32,400,64),SColor(255,255,255,255));
 
 		driver->endScene();
 	}

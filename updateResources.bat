@@ -1,5 +1,15 @@
 @echo on
 
+cd "Release"
+del /f /q "Irrlicht.dll"
+cd "../"
+cd "Debug"
+del /f /q "Irrlicht.dll"
+cd "../"
+cd "ExploreGameEngine"
+del /f /q "Irrlicht.dll"
+cd "../"
+
 rmdir /s /q "Release/res"
 rmdir /s /q "Debug/res"
 rmdir /s /q "ExploreGameEngine/res"

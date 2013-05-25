@@ -13,6 +13,9 @@
   <ItemGroup>
     <ClCompile Include="source\main.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="source\globals.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{6D70EF63-458B-4434-9514-2E538D64DB00}</ProjectGuid>
     <RootNamespace>ExploreGameEngine</RootNamespace>
