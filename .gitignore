@@ -1,0 +1,13 @@
+# .gitignore file
+
+# Ignore stupid VS files
+*.sdf
+*.opensdf
+
+# Ignore Release and Debug outputs of solution
+Debug/
+Release/
+
+# Ignore the output builds of the game engine
+ExploreGameEngine/Debug/
+ExploreGameEngine/Release/
