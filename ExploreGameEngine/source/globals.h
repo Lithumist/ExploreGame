@@ -22,6 +22,10 @@ using namespace io;
 using namespace gui;
 
 
+
+#include "event_receiver.h"
+
+
 namespace eg
 {
 
@@ -42,6 +46,8 @@ namespace eg
 		IVideoDriver* driver;
 		ISceneManager* smgr;
 		IGUIEnvironment* guienv;
+		EGEventReceiver receiver;
+
 
 		// fonts
 		IGUIFont* fnt_trololol;

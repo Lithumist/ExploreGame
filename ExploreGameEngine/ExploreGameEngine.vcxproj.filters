@@ -13,15 +13,27 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\custom event receiver">
+      <UniqueIdentifier>{676dd70d-1932-48fe-8f77-ecc24923d707}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\custom event receiver">
+      <UniqueIdentifier>{1af78e59-0b33-4ff9-9c55-9b80cf659507}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="source\event_receiver.cpp">
+      <Filter>Source Files\custom event receiver</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\globals.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\event_receiver.h">
+      <Filter>Header Files\custom event receiver</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

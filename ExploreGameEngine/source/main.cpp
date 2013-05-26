@@ -49,7 +49,7 @@ int main()
 	// Create the window and set caption
 	GlobalData.window_width = 960;
 	GlobalData.window_height = 656;
-	GlobalData.device = createDevice(video::EDT_SOFTWARE, dimension2d<u32>(GlobalData.window_width,GlobalData.window_height), 16, false, false, false, 0);
+	GlobalData.device = createDevice(video::EDT_SOFTWARE, dimension2d<u32>(GlobalData.window_width,GlobalData.window_height), 16, false, false, false, &GlobalData.receiver);
 	if(!GlobalData.device)
 		return 1;
 
@@ -84,13 +84,17 @@ int main()
 
 
 
+	// Set state to main menu
+	GlobalData.current_state = 1;
+
+
 	// Main loop
 	while(GlobalData.device->run())
 	{
 
 		// step
 		int rtn = step(&GlobalData);
-		if(rtn < 0)
+		if(rtn != 0)
 		{
 			GlobalData.device->drop();
 			return rtn;
@@ -139,5 +143,29 @@ void draw(eg::global* data)
 
 int step(eg::global* data)
 {
+
+
+	switch(data->current_state)
+	{
+		case 0: // initial loading
+		break;
+
+		case 1: // main menu
+			
+			if(data->receiver.IsKeyDown(irr::KEY_KEY_N))
+			{
+				return 1;
+			}
+
+			if(data->receiver.IsKeyDown(irr::KEY_KEY_L))
+			{
+				return 1;
+			}
+
+		break;
+	}
+
+
+
 	return 0;
 }

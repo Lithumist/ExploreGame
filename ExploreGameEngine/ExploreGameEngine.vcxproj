@@ -11,9 +11,11 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="source\event_receiver.cpp" />
     <ClCompile Include="source\main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="source\event_receiver.h" />
     <ClInclude Include="source\globals.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
