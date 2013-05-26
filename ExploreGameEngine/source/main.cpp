@@ -125,13 +125,31 @@ int main()
 
 void draw(eg::global* data)
 {
-	data->driver->beginScene(true, true, SColor(255,100,101,140));
-	
-	data->fnt_trololol->draw(L"Explore Game",rect<s32>(64,32,400,64),SColor(255,255,255,255));
-	data->fnt_trololol->draw(L"N - new game",rect<s32>(128,128,400,64),SColor(255,255,255,255));
-	data->fnt_trololol->draw(L"L - load game",rect<s32>(128,160,400,64),SColor(255,255,255,255));
 
-	data->driver->endScene();
+
+	switch(data->current_state)
+	{
+		case 0: // initial loading
+		break;
+
+		case 1: // main menu
+
+			data->driver->beginScene(true, true, SColor(255,100,101,140));
+	
+			data->fnt_trololol->draw(L"Explore Game",rect<s32>(64,32,400,64),SColor(255,255,255,255));
+			data->fnt_trololol->draw(L"N - new game",rect<s32>(128,128,400,64),SColor(255,255,255,255));
+			data->fnt_trololol->draw(L"L - load game",rect<s32>(128,160,400,64),SColor(255,255,255,255));
+
+			data->driver->endScene();
+
+		break;
+
+		case 2: // playing
+		break;
+	}
+
+
+
 }
 
 
