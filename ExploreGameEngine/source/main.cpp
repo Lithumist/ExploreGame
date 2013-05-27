@@ -1,3 +1,9 @@
+/*
+	Debug Mode
+*/
+#define EG_DEBUG_MODE 1
+
+
 #include <irrlicht.h>
 using namespace irr;
 using namespace core;
@@ -7,7 +13,9 @@ using namespace io;
 using namespace gui;
 
 #ifdef _IRR_WINDOWS_
+#ifndef EG_DEBUG_MODE
 #pragma comment(linker, "/subsystem:windows /ENTRY:mainCRTStartup")
+#endif
 #endif
 
 
@@ -21,7 +29,8 @@ using namespace gui;
 
 
 
-
+IAnimatedMesh* level = NULL;
+IAnimatedMeshSceneNode* levelNode = NULL;
 
 
 
@@ -73,6 +82,25 @@ int main()
 		GlobalData.device->drop();
 		return 2;
 	}
+
+
+	// Load test level
+	level = GlobalData.smgr->getMesh("res/DemonEye/DemonicEye.3ds");
+	if(!level)
+	{
+		GlobalData.device->drop();
+		return 2;
+	}
+	
+	levelNode = GlobalData.smgr->addAnimatedMeshSceneNode(level);
+	if(levelNode)
+	{
+		levelNode->setMaterialFlag(EMF_LIGHTING, false);
+		levelNode->setMaterialTexture(0, GlobalData.driver->getTexture("res/DemonEye/DemonicEye_diffuse.png"));
+	}
+
+	//GlobalData.smgr->addCameraSceneNode(0, vector3df(0,30,-40), vector3df(0,5,0));
+	GlobalData.smgr->addCameraSceneNodeFPS();
 
 
 	// - - - - - - - - - - - - -
@@ -145,6 +173,11 @@ void draw(eg::global* data)
 		break;
 
 		case 2: // playing
+			data->driver->beginScene(true, true, SColor(255,100,101,140));
+			
+			data->smgr->drawAll();
+
+			data->driver->endScene();
 		break;
 	}
 
@@ -172,12 +205,12 @@ int step(eg::global* data)
 			
 			if(data->receiver.IsKeyDown(irr::KEY_KEY_N))
 			{
-				return 1;
+				data->current_state = 2;
 			}
 
 			if(data->receiver.IsKeyDown(irr::KEY_KEY_L))
 			{
-				return 1;
+				data->current_state = 2;
 			}
 
 		break;
