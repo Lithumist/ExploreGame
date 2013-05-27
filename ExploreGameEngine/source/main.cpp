@@ -58,7 +58,7 @@ int main()
 	// Create the window and set caption
 	GlobalData.window_width = 960;
 	GlobalData.window_height = 656;
-	GlobalData.device = createDevice(video::EDT_SOFTWARE, dimension2d<u32>(GlobalData.window_width,GlobalData.window_height), 16, false, false, false, &GlobalData.receiver);
+	GlobalData.device = createDevice(video::EDT_OPENGL, dimension2d<u32>(GlobalData.window_width,GlobalData.window_height), 16, false, false, false, &GlobalData.receiver);
 	if(!GlobalData.device)
 		return 1;
 
@@ -85,7 +85,7 @@ int main()
 
 
 	// Load test level
-	level = GlobalData.smgr->getMesh("res/DemonEye/DemonicEye.3ds");
+	level = GlobalData.smgr->getMesh("res/crate.3ds");
 	if(!level)
 	{
 		GlobalData.device->drop();
@@ -96,11 +96,11 @@ int main()
 	if(levelNode)
 	{
 		levelNode->setMaterialFlag(EMF_LIGHTING, false);
-		levelNode->setMaterialTexture(0, GlobalData.driver->getTexture("res/DemonEye/DemonicEye_diffuse.png"));
+		//levelNode->setMaterialTexture(0, GlobalData.driver->getTexture("res/DemonEye/DemonicEye_diffuse.png"));
 	}
 
-	//GlobalData.smgr->addCameraSceneNode(0, vector3df(0,30,-40), vector3df(0,5,0));
-	GlobalData.smgr->addCameraSceneNodeFPS();
+	GlobalData.smgr->addCameraSceneNode(0, vector3df(0,30,-40), vector3df(0,5,0));
+	//GlobalData.smgr->addCameraSceneNodeFPS();
 
 
 	// - - - - - - - - - - - - -
