@@ -85,22 +85,10 @@ int main()
 
 
 	// Load test level
-	level = GlobalData.smgr->getMesh("res/crate.3ds");
-	if(!level)
-	{
-		GlobalData.device->drop();
-		return 2;
-	}
-	
-	levelNode = GlobalData.smgr->addAnimatedMeshSceneNode(level);
-	if(levelNode)
-	{
-		levelNode->setMaterialFlag(EMF_LIGHTING, false);
-		//levelNode->setMaterialTexture(0, GlobalData.driver->getTexture("res/DemonEye/DemonicEye_diffuse.png"));
-	}
+	GlobalData.smgr->loadScene("res/test.irr");
 
-	GlobalData.smgr->addCameraSceneNode(0, vector3df(0,30,-40), vector3df(0,5,0));
-	//GlobalData.smgr->addCameraSceneNodeFPS();
+	//GlobalData.smgr->addCameraSceneNode(0, vector3df(0,30,-40), vector3df(0,5,0));
+	GlobalData.smgr->addCameraSceneNodeFPS();
 
 
 	// - - - - - - - - - - - - -
