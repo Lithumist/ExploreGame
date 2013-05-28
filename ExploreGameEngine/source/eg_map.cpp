@@ -50,6 +50,10 @@ namespace eg
 		bool gotStarting = false;
 
 
+		// Log
+		eg::log::log("Loading map " + filename);
+
+
 		// Clear old scene
 		GlobalData->smgr->clear();
 
@@ -108,19 +112,20 @@ namespace eg
 
 		// Print any necessary warnings
 		if(!gotVisual)
-			eg::log::log("No visual");
+			eg::log::warning("No visual mesh found");
 
 		if(!gotPhysics)
-			eg::log::log("No physics");
+			eg::log::warning("No physics mesh found");
 
 		if(!gotStarting)
-			eg::log::log("No starting");
+			eg::log::warning("No starting mesh found");
 
 
 
 
 
-
+		// Log
+		eg::log::log("Finished loading map " + filename);
 
 		return true;
 	}

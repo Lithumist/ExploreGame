@@ -102,8 +102,8 @@ namespace eg
 		/* warning */
 		void warning(std::string message)
 		{
-			error_iostream(message);
-			error_file(message);
+			warning_iostream(message);
+			warning_file(message);
 		}
 
 

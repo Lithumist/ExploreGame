@@ -2,9 +2,21 @@ Explore Game engine started
 Created Irrlicht device
 Window set up
 Loaded font file res/fonts/trololol.xml
+Loading map res/maps/test1/test1.irr
 
-MeshCollision
-No visual
-No physics
-No starting
+startup skybox
+MeshVisual
+
+ --- Warning ---
+No visual mesh found
+ ---------------
+
+ --- Warning ---
+No physics mesh found
+ ---------------
+
+ --- Warning ---
+No starting mesh found
+ ---------------
+Finished loading map res/maps/test1/test1.irr
 Explore Game engine exited
