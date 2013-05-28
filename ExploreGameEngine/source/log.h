@@ -55,10 +55,11 @@ namespace eg
 
 
 		//
-		// Warning logging
+		// Warning logging (formatted to be easy to spot)
 		//
-
-		// TODO
+		void warning(std::string message); // logs a warning message to iostream and the log file
+		void warning_iostream(std::string message); // logs a warning message to iostream
+		void warning_file(std::string message); // logs a warning message to the log file
 
 
 

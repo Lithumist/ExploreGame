@@ -95,6 +95,58 @@ namespace eg
 
 
 
+
+
+
+
+		/* warning */
+		void warning(std::string message)
+		{
+			error_iostream(message);
+			error_file(message);
+		}
+
+
+
+
+		/* warning_iostream */
+		void warning_iostream(std::string message)
+		{
+			// only log to iostream in debug mode
+			#ifndef EG_DEBUG_MODE
+			return;
+			#endif
+
+			std::cout << std::endl;
+			std::cout << " --- Warning ---" << std::endl;
+			std::cout << message << std::endl;
+			std::cout << " ---------------" << std::endl;
+		}
+
+
+
+
+		/* warning_file */
+		void warning_file(std::string message)
+		{
+			if(!LOG_FILE.is_open())
+				return;
+
+			LOG_FILE << std::endl;
+			LOG_FILE << " --- Warning ---" << std::endl;
+			LOG_FILE << message << std::endl;
+			LOG_FILE << " ---------------" << std::endl;
+		}
+
+
+
+
+
+
+
+
+
+
 		/* error */
 		void error(std::string message)
 		{
