@@ -1,1 +1,10 @@
-Explore Game engine started.
+Explore Game engine started
+Created Irrlicht device
+Window set up
+Loaded font file res/fonts/trololol.xml
+
+MeshCollision
+No visual
+No physics
+No starting
+Explore Game engine exited

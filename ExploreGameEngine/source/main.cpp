@@ -20,6 +20,7 @@ using namespace gui;
 
 #include "globals.h"
 #include "log.h"
+#include "eg_map.h"
 
 
 
@@ -42,7 +43,7 @@ int main()
 {
 	// Open log file
 	eg::log::open("log.txt");
-	eg::log::log("Explore Game engine started.");
+	eg::log::log("Explore Game engine started");
 
 
 	// Create global struct
@@ -58,7 +59,12 @@ int main()
 	GlobalData.window_height = 656;
 	GlobalData.device = createDevice(video::EDT_OPENGL, dimension2d<u32>(GlobalData.window_width,GlobalData.window_height), 16, false, false, false, &GlobalData.receiver);
 	if(!GlobalData.device)
+	{
+		eg::log::error("Unable to create Irrlicht device");
+		eg::log::close();
 		return 1;
+	}
+	eg::log::log("Created Irrlicht device");
 
 	GlobalData.window_caption = L"ExploreGame";
 	GlobalData.device->setWindowCaption(GlobalData.window_caption.c_str());
@@ -66,6 +72,7 @@ int main()
 	GlobalData.driver = GlobalData.device->getVideoDriver();
 	GlobalData.smgr = GlobalData.device->getSceneManager();
 	GlobalData.guienv = GlobalData.device->getGUIEnvironment();
+	eg::log::log("Window set up");
 
 
 	// - - - - - - - - - - - - -
@@ -77,13 +84,17 @@ int main()
 	GlobalData.fnt_trololol = GlobalData.guienv->getFont("res/fonts/trololol.xml");
 	if(GlobalData.fnt_trololol == NULL)
 	{
+		eg::log::error("Unable to load font file res/fonts/trololol.xml");
+		eg::log::close();
 		GlobalData.device->drop();
 		return 2;
 	}
+	eg::log::log("Loaded font file res/fonts/trololol.xml");
 
 
 	// Load test level
-	GlobalData.smgr->loadScene("res/test.irr");
+	//GlobalData.smgr->loadScene("res/test.irr");
+	eg::EGMap main_map(&GlobalData, "res/test.irr");
 
 	//GlobalData.smgr->addCameraSceneNode(0, vector3df(0,30,-40), vector3df(0,5,0));
 	GlobalData.smgr->addCameraSceneNodeFPS();
@@ -124,6 +135,7 @@ int main()
 
 
 	// Exit
+	eg::log::log("Explore Game engine exited");
 	GlobalData.device->drop();
 	eg::log::close();
 	return 0;

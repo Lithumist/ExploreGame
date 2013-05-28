@@ -55,6 +55,14 @@ namespace eg
 
 
 		//
+		// Warning logging
+		//
+
+		// TODO
+
+
+
+		//
 		// Error logging (formatted to be easy to spot)
 		//
 		void error(std::string message); // logs an error message to iostream and the log file

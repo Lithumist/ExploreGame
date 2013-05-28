@@ -19,6 +19,7 @@
 
 
 #include "globals.h"
+#include "log.h"
 
 
 
@@ -44,7 +45,7 @@ namespace eg
 
 		global* GlobalData;
 		float playerStartX, playerStartY;
-		//std::vector<ISceneNode> mapNodes;   doesn't work because abstract class
+		IMetaTriangleSelector* meta;
 
 	public:
 
