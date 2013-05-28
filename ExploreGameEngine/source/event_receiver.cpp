@@ -1,4 +1,3 @@
-
 // event_receiver.cpp
 #include "event_receiver.h"
 

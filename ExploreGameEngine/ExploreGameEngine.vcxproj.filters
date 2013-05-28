@@ -19,6 +19,18 @@
     <Filter Include="Source Files\custom event receiver">
       <UniqueIdentifier>{1af78e59-0b33-4ff9-9c55-9b80cf659507}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\map files">
+      <UniqueIdentifier>{2c5f302b-8a20-47fe-8af0-f7c19cfb35fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\map files">
+      <UniqueIdentifier>{3ab69bff-93a3-4ce2-85a2-51849ad0ea0f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\logging">
+      <UniqueIdentifier>{e11d05d9-d496-4168-8516-1a5958521f2f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\logging">
+      <UniqueIdentifier>{0886bb13-dc5d-4953-ad20-4f68d1f93c38}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\main.cpp">
@@ -27,6 +39,12 @@
     <ClCompile Include="source\event_receiver.cpp">
       <Filter>Source Files\custom event receiver</Filter>
     </ClCompile>
+    <ClCompile Include="source\eg_map.cpp">
+      <Filter>Source Files\map files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\log.cpp">
+      <Filter>Source Files\logging</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\globals.h">
@@ -34,6 +52,12 @@
     </ClInclude>
     <ClInclude Include="source\event_receiver.h">
       <Filter>Header Files\custom event receiver</Filter>
+    </ClInclude>
+    <ClInclude Include="source\eg_map.h">
+      <Filter>Header Files\map files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\log.h">
+      <Filter>Header Files\logging</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

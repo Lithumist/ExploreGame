@@ -1,9 +1,3 @@
-/*
-	Debug Mode
-*/
-#define EG_DEBUG_MODE 1
-
-
 #include <irrlicht.h>
 using namespace irr;
 using namespace core;
@@ -25,12 +19,11 @@ using namespace gui;
 
 
 #include "globals.h"
+#include "log.h"
 
 
 
 
-IAnimatedMesh* level = NULL;
-IAnimatedMeshSceneNode* levelNode = NULL;
 
 
 
@@ -47,6 +40,11 @@ void draw(eg::global* data);
 
 int main()
 {
+	// Open log file
+	eg::log::open("log.txt");
+	eg::log::log("Explore Game engine started.");
+
+
 	// Create global struct
 	eg::global GlobalData;
 
@@ -127,6 +125,7 @@ int main()
 
 	// Exit
 	GlobalData.device->drop();
+	eg::log::close();
 	return 0;
 
 

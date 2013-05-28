@@ -11,12 +11,16 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="source\eg_map.cpp" />
     <ClCompile Include="source\event_receiver.cpp" />
+    <ClCompile Include="source\log.cpp" />
     <ClCompile Include="source\main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="source\eg_map.h" />
     <ClInclude Include="source\event_receiver.h" />
     <ClInclude Include="source\globals.h" />
+    <ClInclude Include="source\log.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{6D70EF63-458B-4434-9514-2E538D64DB00}</ProjectGuid>
@@ -56,6 +60,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
