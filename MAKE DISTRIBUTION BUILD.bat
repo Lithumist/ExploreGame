@@ -13,6 +13,9 @@ rmdir /s /q "Build/Game"
 :: Copy the new build over
 echo d | xcopy "Release" "Build/Game" /s /e /v
 
+:: Copy the vc++2010 redist dlls
+echo d | xcopy "redist" "Build/Game" /s /e /v
+
 :: Delete unnecessary files
 cd "Build/Game"
 del "log.txt"
