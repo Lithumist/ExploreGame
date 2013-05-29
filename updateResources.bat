@@ -1,3 +1,8 @@
+:: 
+:: This script updates the /res folder in all builds, except the deployable one! (in /build folder)
+:: Resources/res is the master
+:: 
+
 @echo on
 
 cd "Release"
