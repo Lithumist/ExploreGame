@@ -5,6 +5,8 @@
 
 
 
+@echo on
+
 
 
 :: Remove old build
