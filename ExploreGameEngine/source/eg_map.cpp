@@ -88,8 +88,11 @@ namespace eg
 				selector = GlobalData->smgr->createOctreeTriangleSelector(((scene::IMeshSceneNode*)node)->getMesh(), node);
 			}
 
-			else if(rname == "MeshStart") // TODO: handle multiple start meshes, make camera start from these coordinates
+			else if(rname == "MeshStart") // TODO: make camera start from these coordinates
 			{
+				if(gotStarting)
+					eg::log::warning("Multiple starting meshes");
+
 				gotStarting = true;
 				playerStartX = node->getPosition().X;
 				playerStartY = node->getPosition().Y;
