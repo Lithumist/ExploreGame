@@ -70,8 +70,9 @@ namespace eg
 			ISceneNode* node = nodes[i];
 			ITriangleSelector* selector = 0;
 
-			core::stringc name = node->getName(); // TODO: why does this give "bad formated string"?!?!?!?!?!?
-			eg::log::log(name.c_str());
+			core::stringc name = node->getName();
+			std::string rname = name.c_str();
+			eg::log::log("###" + eg::ut::toString((int)i) +"###" + rname + "###");
 
 			if((const char*)node->getName() == "MeshVisual")
 			{

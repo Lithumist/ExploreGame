@@ -31,6 +31,9 @@
     <Filter Include="Source Files\logging">
       <UniqueIdentifier>{0886bb13-dc5d-4953-ad20-4f68d1f93c38}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\globals">
+      <UniqueIdentifier>{d95a887a-d15b-488a-9b78-7b7db1f0a19c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\main.cpp">
@@ -47,9 +50,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="source\globals.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="source\event_receiver.h">
       <Filter>Header Files\custom event receiver</Filter>
     </ClInclude>
@@ -58,6 +58,9 @@
     </ClInclude>
     <ClInclude Include="source\log.h">
       <Filter>Header Files\logging</Filter>
+    </ClInclude>
+    <ClInclude Include="source\globals.h">
+      <Filter>Header Files\globals</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
