@@ -3,13 +3,9 @@ Created Irrlicht device
 Window set up
 Loaded font file res/fonts/trololol.xml
 Loading map res/maps/test1/test1.irr
-######
-###startup skybox###
-###MeshVisual###
-
- --- Warning ---
-No visual mesh found
- ---------------
+Node number 0, name ''
+Node number 1, name 'startup skybox'
+Node number 2, name 'MeshVisual'
 
  --- Warning ---
 No physics mesh found

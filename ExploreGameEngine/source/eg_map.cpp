@@ -70,22 +70,25 @@ namespace eg
 			ISceneNode* node = nodes[i];
 			ITriangleSelector* selector = 0;
 
+			// Do some trickery to convert the meshes name into a comparable string
 			core::stringc name = node->getName();
 			std::string rname = name.c_str();
-			eg::log::log("###" + eg::ut::toString((int)i) +"###" + rname + "###");
 
-			if((const char*)node->getName() == "MeshVisual")
+			// Log for easy level debugging
+			eg::log::log("Node number " + eg::ut::toString((int)i) +", name '" + rname + "'");
+
+			if(rname == "MeshVisual")
 			{
 				gotVisual = true;
 			}
 
-			else if(node->getName() == "MeshPhysics")
+			else if(rname == "MeshPhysics")
 			{
 				gotPhysics = true;
 				selector = GlobalData->smgr->createOctreeTriangleSelector(((scene::IMeshSceneNode*)node)->getMesh(), node);
 			}
 
-			else if(node->getName() == "MeshStart") // TODO: handle multiple start meshes, make camera start from these coordinates
+			else if(rname == "MeshStart") // TODO: handle multiple start meshes, make camera start from these coordinates
 			{
 				gotStarting = true;
 				playerStartX = node->getPosition().X;
