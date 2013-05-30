@@ -1,6 +1,7 @@
 #ifndef EG_MAP_H
 #define EG_MAP_H
 
+
 /*
 	eg_map.h
 
@@ -48,6 +49,11 @@ namespace eg
 		float playerStartX, playerStartY, playerStartZ;
 		IMetaTriangleSelector* meta;
 		ICameraSceneNode* mapCamera;
+		SKeyMap keymap[6];
+
+
+
+		void setUpKeyMap();
 
 	public:
 

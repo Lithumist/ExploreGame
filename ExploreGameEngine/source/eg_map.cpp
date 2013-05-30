@@ -19,6 +19,8 @@ namespace eg
 		GlobalData = data;
 		playerStartX = 0.0f;
 		playerStartY = 0.0f;
+
+		setUpKeyMap();
 	}
 
 
@@ -30,7 +32,39 @@ namespace eg
 			eg::log::log("Bad pointer being passed to EGMap::EGMap(global* data, std::string filename)");
 
 		GlobalData = data;
+		setUpKeyMap();
 		loadFromFile(filename);
+	}
+
+
+
+
+
+
+
+	// Set up WASD movement with space to jump and ctrl to crouch
+	void EGMap::setUpKeyMap()
+	{
+
+		keymap[0].Action = EKA_MOVE_FORWARD;
+		keymap[0].KeyCode = KEY_KEY_W;
+
+		keymap[1].Action = EKA_MOVE_BACKWARD;
+		keymap[1].KeyCode = KEY_KEY_S;
+		
+		keymap[2].Action = EKA_STRAFE_LEFT;
+		keymap[2].KeyCode = KEY_KEY_A;
+
+		keymap[3].Action = EKA_STRAFE_RIGHT;
+		keymap[3].KeyCode = KEY_KEY_D;
+
+		keymap[4].Action = EKA_JUMP_UP; // doesn't work
+		keymap[4].KeyCode = KEY_SPACE;
+
+		keymap[5].Action = EKA_CROUCH; // doesn't work
+		keymap[5].KeyCode = KEY_LCONTROL;
+
+		
 	}
 
 
@@ -122,8 +156,10 @@ namespace eg
 
 
 
+
+
 		// Set up fps camera for collision
-		mapCamera = GlobalData->smgr->addCameraSceneNodeFPS(0,50.0f,0.1f);
+		mapCamera = GlobalData->smgr->addCameraSceneNodeFPS(0,50.0f,0.1f,-1,keymap, 6);
 		ISceneNodeAnimator* anim = GlobalData->smgr->createCollisionResponseAnimator(meta,mapCamera, vector3df(10,15,10),vector3df(0,-2,0));
 		meta->drop();
 		mapCamera->addAnimator(anim);
