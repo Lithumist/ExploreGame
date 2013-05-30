@@ -160,6 +160,10 @@ namespace eg
 		bool error = false;
 
 
+		// Clear old map data (if any)
+		clear();
+
+
 		// Log
 		eg::log::log("Loading map " + filename);
 
@@ -215,13 +219,11 @@ namespace eg
 				node->setVisible(false);
 			}
 
-			else if(rname.substr(0,rname.length()-4) == "MapSpot") // get rid of the number part
+			else if(rname.substr(0,rname.length()-4) == "MapSpot")
 			{
-				// Get the id
 				int id = ut::toNumber(rname.substr(rname.length()-4,rname.length()));
 				eg::log::log("Map Spot with id " + ut::toString(id) + ". At " + ut::toString(node->getPosition().X) + "," + ut::toString(node->getPosition().Y) + "," +ut::toString(node->getPosition().Z));
 
-				// Add the map spot
 				mapSpots[id] = mapspot(node->getPosition().X, node->getPosition().Y, node->getPosition().Z);
 			}
 
