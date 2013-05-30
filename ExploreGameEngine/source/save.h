@@ -11,6 +11,33 @@
 
 
 
+
+
+
+
+/*
+	Stuff not loading correctly?
+
+	Use number suffixes!!!!
+
+
+
+
+	Remember that the compiler assumes what type a number is.
+	Sometimes this assumption isn't the same as yours.
+
+	e.g:
+
+	3.14	<- compiler will assume type 'double'
+	3.14f	<- compiler now knows you ment type 'float'
+*/
+
+
+
+
+
+
+
 #include <iostream>
 #include <string>
 //#include <vector>
