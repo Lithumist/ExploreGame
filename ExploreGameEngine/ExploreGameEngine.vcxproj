@@ -15,6 +15,7 @@
     <ClCompile Include="source\event_receiver.cpp" />
     <ClCompile Include="source\log.cpp" />
     <ClCompile Include="source\main.cpp" />
+    <ClCompile Include="source\save.cpp" />
     <ClCompile Include="source\utils.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -22,6 +23,7 @@
     <ClInclude Include="source\event_receiver.h" />
     <ClInclude Include="source\globals.h" />
     <ClInclude Include="source\log.h" />
+    <ClInclude Include="source\save.h" />
     <ClInclude Include="source\utils.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

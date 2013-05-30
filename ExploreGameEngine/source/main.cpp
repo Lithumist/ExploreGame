@@ -21,6 +21,7 @@ using namespace gui;
 #include "globals.h"
 #include "log.h"
 #include "eg_map.h"
+#include "save.h"
 
 
 
@@ -93,11 +94,34 @@ int main()
 
 
 	// Load test level
-	//GlobalData.smgr->loadScene("res/test.irr");
 	eg::EGMap main_map(&GlobalData, "res/maps/test2/test2.irr");
 
-	//GlobalData.smgr->addCameraSceneNode(0, vector3df(0,30,-40), vector3df(0,5,0));
-	//GlobalData.smgr->addCameraSceneNodeFPS();
+	// Do savedata test
+	eg::savedata d;
+	d.a = true;
+	d.b = false;
+	d.c = true;
+
+	eg::EGSave sv;
+	sv.SaveToFile("TESTSAVE.txt", d);
+
+	eg::savedata f;
+	sv.LoadFromFile("TESTSAVE.txt", f);
+
+	if(f.a == true)
+		std::cout << "1st pass\n";
+	else
+		std::cout << "1st fail\n";
+
+	if(f.b == false)
+		std::cout << "2nd pass\n";
+	else
+		std::cout << "2nd fail\n";
+
+	if(f.c == true)
+		std::cout << "3rd pass\n";
+	else
+		std::cout << "3rd fail\n";
 
 
 	// - - - - - - - - - - - - -

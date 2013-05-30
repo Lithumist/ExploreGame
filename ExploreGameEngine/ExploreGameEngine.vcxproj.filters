@@ -52,6 +52,12 @@
     <Filter Include="Header Files\Irrlicht shit\custom event receiver">
       <UniqueIdentifier>{676dd70d-1932-48fe-8f77-ecc24923d707}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\game saves">
+      <UniqueIdentifier>{d58ab8ba-2481-4d24-b6b8-94bd1153003e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\game saves">
+      <UniqueIdentifier>{e88c22e9-7ec9-48d1-9b47-76a50a0e8dce}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\main.cpp">
@@ -69,6 +75,9 @@
     <ClCompile Include="source\utils.cpp">
       <Filter>Source Files\utilities\general</Filter>
     </ClCompile>
+    <ClCompile Include="source\save.cpp">
+      <Filter>Source Files\game saves</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\event_receiver.h">
@@ -85,6 +94,9 @@
     </ClInclude>
     <ClInclude Include="source\utils.h">
       <Filter>Header Files\utilities\general</Filter>
+    </ClInclude>
+    <ClInclude Include="source\save.h">
+      <Filter>Header Files\game saves</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
