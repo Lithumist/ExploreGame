@@ -11,3 +11,6 @@ Release/
 # Ignore the output builds of the game engine
 ExploreGameEngine/Debug/
 ExploreGameEngine/Release/
+
+# Ignore the references folder that's full of non-essential images
+Art/References

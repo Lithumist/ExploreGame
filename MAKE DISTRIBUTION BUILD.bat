@@ -25,5 +25,3 @@ del "ExploreGameEngine.pdb"
 
 :: Rename game executable
 ren "ExploreGameEngine.exe" "Explore Game.exe"
-
-pause
