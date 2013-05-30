@@ -1,3 +1,21 @@
+/*
+* 
+* 
+* 
+* Explore Game Engine
+* 
+* 
+* Pedro Custodio 2013
+* 
+* 
+* 
+* 
+*/
+
+
+
+
+
 #include <irrlicht.h>
 using namespace irr;
 using namespace core;
@@ -23,6 +41,7 @@ using namespace gui;
 #include "log.h"
 #include "eg_map.h"
 #include "save.h"
+#include "lua_wrap.h"
 
 
 
@@ -81,6 +100,10 @@ int main()
 	GlobalData.savegameFilename = "savegame.dat";
 
 
+	// Initialize lua
+	GlobalData.lua.Init();
+
+
 	// - - - - - - - - - - - - -
 	//   Load basic resources
 	// - - - - - - - - - - - - -
@@ -91,8 +114,9 @@ int main()
 	if(GlobalData.fnt_trololol == NULL)
 	{
 		eg::log::error("Unable to load font file res/fonts/trololol.xml");
-		eg::log::close();
+		GlobalData.lua.Free();
 		GlobalData.device->drop();
+		eg::log::close();
 		return 2;
 	}
 	eg::log::log("Loaded font file res/fonts/trololol.xml");
@@ -125,6 +149,8 @@ int main()
 		if(rtn != 0)
 		{
 			GlobalData.device->drop();
+			GlobalData.lua.Free();
+			eg::log::close();
 			return rtn;
 		}
 
@@ -140,6 +166,7 @@ int main()
 	// Exit
 	eg::log::log("Explore Game engine exited");
 	GlobalData.device->drop();
+	GlobalData.lua.Free();
 	eg::log::close();
 	return 0;
 

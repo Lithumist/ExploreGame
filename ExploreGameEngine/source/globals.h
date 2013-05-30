@@ -25,6 +25,7 @@ using namespace gui;
 
 #include "event_receiver.h"
 #include "save.h"
+#include "lua_wrap.h"
 
 
 
@@ -58,6 +59,9 @@ namespace eg
 		// global savegame info
 		savedata SaveData;
 		std::string savegameFilename;
+
+		// lua wrapper
+		LuaWrap lua;
 
 		// game manager
 		eg::EGGame* g;

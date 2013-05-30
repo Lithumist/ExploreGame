@@ -149,7 +149,7 @@ namespace eg
 				selector = GlobalData->smgr->createOctreeTriangleSelector(((scene::IMeshSceneNode*)node)->getMesh(), node);
 			}
 
-			else if(rname == "MeshStart") // TODO: make camera start from these coordinates
+			else if(rname == "MeshStart")
 			{
 				if(gotStarting)
 					eg::log::warning("Multiple starting meshes");
