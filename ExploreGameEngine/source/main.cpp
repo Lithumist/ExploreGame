@@ -96,33 +96,6 @@ int main()
 	// Load test level
 	eg::EGMap main_map(&GlobalData, "res/maps/test2/test2.irr");
 
-	// Do savedata test
-	eg::savedata d;
-	d.a = true;
-	d.b = false;
-	d.c = true;
-
-	eg::EGSave sv;
-	sv.SaveToFile("TESTSAVE.txt", d);
-
-	eg::savedata f;
-	sv.LoadFromFile("TESTSAVE.txt", f);
-
-	if(f.a == true)
-		std::cout << "1st pass\n";
-	else
-		std::cout << "1st fail\n";
-
-	if(f.b == false)
-		std::cout << "2nd pass\n";
-	else
-		std::cout << "2nd fail\n";
-
-	if(f.c == true)
-		std::cout << "3rd pass\n";
-	else
-		std::cout << "3rd fail\n";
-
 
 	// - - - - - - - - - - - - -
 	//           End

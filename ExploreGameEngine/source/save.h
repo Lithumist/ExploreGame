@@ -33,6 +33,11 @@ namespace eg
 		bool a;
 		bool b;
 		bool c;
+
+		int number;
+
+
+		float another_number;
 	};
 
 
