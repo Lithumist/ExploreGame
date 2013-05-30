@@ -11,6 +11,49 @@ namespace eg
 
 
 
+
+
+
+
+
+
+
+
+	//
+	// mapspot
+	//
+
+	mapspot::mapspot()
+	{
+		x=y=z=0;
+	}
+
+	mapspot::mapspot(float X, float Y, float Z)
+	{
+		x = X;
+		y = Y;
+		z = Z;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	//
+	// EGMap
+	//
+
+
+
 	// Default constructor
 	EGMap::EGMap()
 	{
@@ -32,6 +75,16 @@ namespace eg
 		playerStartY = 0.0f;
 
 		setUpKeyMap();
+	}
+
+
+
+	// Clears the map
+	void EGMap::clear()
+	{
+		mapSpots.clear();
+		playerStartX = 0.0f;
+		playerStartY = 0.0f;
 	}
 
 
@@ -160,6 +213,16 @@ namespace eg
 				playerStartZ = node->getPosition().Z;
 
 				node->setVisible(false);
+			}
+
+			else if(rname.substr(0,rname.length()-4) == "MapSpot") // get rid of the number part
+			{
+				// Get the id
+				int id = ut::toNumber(rname.substr(rname.length()-4,rname.length()));
+				eg::log::log("Map Spot with id " + ut::toString(id) + ". At " + ut::toString(node->getPosition().X) + "," + ut::toString(node->getPosition().Y) + "," +ut::toString(node->getPosition().Z));
+
+				// Add the map spot
+				mapSpots[id] = mapspot(node->getPosition().X, node->getPosition().Y, node->getPosition().Z);
 			}
 
 

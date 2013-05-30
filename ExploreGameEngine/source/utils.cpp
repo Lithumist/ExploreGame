@@ -58,9 +58,11 @@ namespace ut
 
 
 
-	// Set of functions to convert numbers to strings
+	// Set of functions to convert numbers to strings and vice versa
 	std::string toString(int num){std::stringstream ss; ss << num; return ss.str();}
 	std::string toString(float num){std::stringstream ss; ss << num; return ss.str();}
+
+	int toNumber(std::string string){return atoi(string.c_str());}
 
 
 

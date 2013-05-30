@@ -15,6 +15,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <map>
 
 
 
@@ -41,6 +42,20 @@ namespace eg
 
 
 
+
+	class mapspot
+	{
+	public:
+
+		mapspot();
+		mapspot(float X, float Y, float Z);
+
+		float x,y,z;
+	};
+
+
+
+
 	class EGMap
 	{
 	private:
@@ -52,6 +67,9 @@ namespace eg
 		SKeyMap keymap[6];
 
 
+		std::map<int,mapspot> mapSpots;
+
+
 
 		void setUpKeyMap();
 
@@ -61,6 +79,9 @@ namespace eg
 		EGMap();
 		EGMap(global* data); // blank map
 		EGMap(global* data, std::string filename); // loads a map from a file
+
+
+		void clear(); // must be called before any other maps are loaded
 
 
 		void setData(global* data);

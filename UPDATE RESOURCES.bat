@@ -14,12 +14,15 @@
 :: Delete old files and folders
 cd "Release"
 del /f /q "Irrlicht.dll"
+del /f /q "lua52.dll"
 cd "../"
 cd "Debug"
 del /f /q "Irrlicht.dll"
+del /f /q "lua52.dll"
 cd "../"
 cd "ExploreGameEngine"
 del /f /q "Irrlicht.dll"
+del /f /q "lua52.dll"
 cd "../"
 
 rmdir /s /q "Release/res"

@@ -64,6 +64,12 @@
     <Filter Include="Source Files\gameplay management">
       <UniqueIdentifier>{bd52f5e4-46fb-4cab-b9db-1904d2ea81ee}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\lua">
+      <UniqueIdentifier>{8fd4aa72-fffb-4d57-a73a-2fcffa7f5690}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\lua">
+      <UniqueIdentifier>{0daaf1e2-6cdb-4e50-b9be-b11b5056f6b6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\main.cpp">
@@ -87,6 +93,9 @@
     <ClCompile Include="source\game.cpp">
       <Filter>Source Files\gameplay management</Filter>
     </ClCompile>
+    <ClCompile Include="source\lua_wrap.cpp">
+      <Filter>Source Files\lua</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\event_receiver.h">
@@ -109,6 +118,9 @@
     </ClInclude>
     <ClInclude Include="source\game.h">
       <Filter>Header Files\gameplay management</Filter>
+    </ClInclude>
+    <ClInclude Include="source\lua_wrap.h">
+      <Filter>Header Files\lua</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

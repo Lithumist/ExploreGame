@@ -19,6 +19,7 @@
 #include <string>
 #include <sstream>
 #include <vector>
+#include <stdlib.h>
 
 namespace eg{
 namespace ut
@@ -52,6 +53,7 @@ namespace ut
 	// Set of functions to convert numbers to strings
 	std::string toString(int num);
 	std::string toString(float num);
+	int toNumber(std::string string);
 
 
 
