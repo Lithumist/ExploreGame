@@ -7,5 +7,9 @@ Node number 0, name ''
 Node number 1, name 'MeshVisual'
 Node number 2, name 'MeshPhysics'
 Node number 3, name 'MeshStart'
+Node number 4, name 'MeshVisual'
+Node number 5, name 'MeshVisual'
+Node number 6, name 'MeshVisual'
+Node number 7, name 'MeshPhysics'
 Finished loading map res/maps/test2/test2.irr
 Explore Game engine exited
