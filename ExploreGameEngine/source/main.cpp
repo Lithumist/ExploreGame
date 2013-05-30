@@ -94,10 +94,10 @@ int main()
 
 	// Load test level
 	//GlobalData.smgr->loadScene("res/test.irr");
-	eg::EGMap main_map(&GlobalData, "res/maps/test1/test1.irr");
+	eg::EGMap main_map(&GlobalData, "res/maps/test2/test2.irr");
 
 	//GlobalData.smgr->addCameraSceneNode(0, vector3df(0,30,-40), vector3df(0,5,0));
-	GlobalData.smgr->addCameraSceneNodeFPS();
+	//GlobalData.smgr->addCameraSceneNodeFPS();
 
 
 	// - - - - - - - - - - - - -

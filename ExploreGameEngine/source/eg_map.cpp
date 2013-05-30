@@ -48,6 +48,7 @@ namespace eg
 		bool gotVisual = false;
 		bool gotPhysics = false;
 		bool gotStarting = false;
+		bool error = false;
 
 
 		// Log
@@ -60,6 +61,10 @@ namespace eg
 
 		// Load .irr file
 		GlobalData->smgr->loadScene(filename.c_str());
+
+
+		// Create meta triangle selector
+		meta = GlobalData->smgr->createMetaTriangleSelector();
 
 
 		// Process each mesh type
@@ -96,6 +101,7 @@ namespace eg
 				gotStarting = true;
 				playerStartX = node->getPosition().X;
 				playerStartY = node->getPosition().Y;
+				playerStartZ = node->getPosition().Z;
 
 				node->setVisible(false);
 			}
@@ -116,16 +122,39 @@ namespace eg
 
 
 
+		// Set up fps camera for collision
+		mapCamera = GlobalData->smgr->addCameraSceneNodeFPS(0,50.0f,0.1f);
+		ISceneNodeAnimator* anim = GlobalData->smgr->createCollisionResponseAnimator(meta,mapCamera, vector3df(10,15,10),vector3df(0,-2,0));
+		meta->drop();
+		mapCamera->addAnimator(anim);
+		anim->drop();
+
+		// Set camera position
+		mapCamera->setPosition(vector3df(playerStartX,playerStartY,playerStartZ));
+
+
+
+
+
 
 		// Print any necessary warnings
 		if(!gotVisual)
+		{
+			error = true;
 			eg::log::warning("No visual mesh found");
+		}
 
 		if(!gotPhysics)
+		{
+			error = true;
 			eg::log::warning("No physics mesh found");
+		}
 
 		if(!gotStarting)
+		{
+			error = true;
 			eg::log::warning("No starting mesh found");
+		}
 
 
 
@@ -134,7 +163,11 @@ namespace eg
 		// Log
 		eg::log::log("Finished loading map " + filename);
 
-		return true;
+
+
+
+
+		return !error;
 	}
 
 
@@ -149,8 +182,16 @@ namespace eg
 	// get+set player start position
 	void EGMap::setPlayerStartX(float x){playerStartX = x;}
 	void EGMap::setPlayerStartY(float y){playerStartY = y;}
+	void EGMap::setPlayerStartZ(float z){playerStartZ = z;}
 	float EGMap::getPlayerStartX(){return playerStartX;}
 	float EGMap::getPlayerStartY(){return playerStartY;}
+	float EGMap::getPlayerStartZ(){return playerStartZ;}
+
+
+
+
+	// camera control
+	ICameraSceneNode* EGMap::getCamera(){ return mapCamera; }
 
 
 

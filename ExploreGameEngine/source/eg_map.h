@@ -45,8 +45,9 @@ namespace eg
 	private:
 
 		global* GlobalData;
-		float playerStartX, playerStartY;
+		float playerStartX, playerStartY, playerStartZ;
 		IMetaTriangleSelector* meta;
+		ICameraSceneNode* mapCamera;
 
 	public:
 
@@ -56,16 +57,19 @@ namespace eg
 
 		bool loadFromFile(std::string filename);
 
-		void applyToSceneManager(ISceneManager* sm); // loads the map into the scene manager
-
 
 
 
 		// get+set player start position
 		void setPlayerStartX(float x);
 		void setPlayerStartY(float y);
+		void setPlayerStartZ(float z);
 		float getPlayerStartX();
 		float getPlayerStartY();
+		float getPlayerStartZ();
+
+		// camera control
+		ICameraSceneNode* getCamera();
 
 	};
 
