@@ -58,8 +58,13 @@ namespace eg
 	public:
 
 
+		EGMap();
 		EGMap(global* data); // blank map
 		EGMap(global* data, std::string filename); // loads a map from a file
+
+
+		void setData(global* data);
+
 
 		bool loadFromFile(std::string filename);
 

@@ -24,10 +24,14 @@ using namespace gui;
 
 
 #include "event_receiver.h"
+#include "save.h"
+
 
 
 namespace eg
 {
+
+	class EGGame;
 
 	struct global
 	{
@@ -48,9 +52,19 @@ namespace eg
 		IGUIEnvironment* guienv;
 		EGEventReceiver receiver;
 
-
 		// fonts
 		IGUIFont* fnt_trololol;
+
+		// global savegame info
+		savedata SaveData;
+		std::string savegameFilename;
+
+		// game manager
+		eg::EGGame* g;
+
+		// pause flags
+		bool isPaused;
+		bool escapePressedPrev;
 
 	};
 

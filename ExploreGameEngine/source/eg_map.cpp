@@ -10,7 +10,18 @@ namespace eg
 
 
 
+
 	// Default constructor
+	EGMap::EGMap()
+	{
+		playerStartX = 0.0f;
+		playerStartY = 0.0f;
+
+		setUpKeyMap();
+	}
+
+
+	// Constructor with global data pointer
 	EGMap::EGMap(global* data)
 	{
 		if(!data)
@@ -34,6 +45,17 @@ namespace eg
 		GlobalData = data;
 		setUpKeyMap();
 		loadFromFile(filename);
+	}
+
+
+
+
+	void EGMap::setData(global* data)
+	{
+		if(!data)
+			eg::log::log("Bad pointer being passed to EGMap::setData(global* data)");
+
+		GlobalData = data;
 	}
 
 

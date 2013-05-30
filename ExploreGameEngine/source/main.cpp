@@ -18,6 +18,7 @@ using namespace gui;
 
 
 
+#include "game.h"
 #include "globals.h"
 #include "log.h"
 #include "eg_map.h"
@@ -76,6 +77,10 @@ int main()
 	eg::log::log("Window set up");
 
 
+	// Set the filename to use when saving and loading games
+	GlobalData.savegameFilename = "savegame.dat";
+
+
 	// - - - - - - - - - - - - -
 	//   Load basic resources
 	// - - - - - - - - - - - - -
@@ -93,10 +98,6 @@ int main()
 	eg::log::log("Loaded font file res/fonts/trololol.xml");
 
 
-	// Load test level
-	eg::EGMap main_map(&GlobalData, "res/maps/test2/test2.irr");
-
-
 	// - - - - - - - - - - - - -
 	//           End
 	// - - - - - - - - - - - - -
@@ -104,6 +105,11 @@ int main()
 
 
 
+
+
+	// Create the game manager
+	eg::EGGame game(&GlobalData);
+	GlobalData.g = &game;
 
 
 	// Set state to main menu
@@ -168,12 +174,13 @@ void draw(eg::global* data)
 
 		break;
 
-		case 2: // playing
-			data->driver->beginScene(true, true, SColor(255,100,101,140));
+		case 2: // in gameplay
 			
-			data->smgr->drawAll();
 
-			data->driver->endScene();
+			eg::EGGame* gam;
+			gam = data->g;
+			gam->draw();
+
 		break;
 	}
 
@@ -199,17 +206,52 @@ int step(eg::global* data)
 
 		case 1: // main menu
 			
+
 			if(data->receiver.IsKeyDown(irr::KEY_KEY_N))
 			{
+				// start the gameplay manager
+				eg::EGGame* gam;
+				gam = data->g;
+				gam->startGameplay(eg::NEW_GAME);
+
+				// tell the main loop to step and render the gameplay
 				data->current_state = 2;
 			}
+
+
+
 
 			if(data->receiver.IsKeyDown(irr::KEY_KEY_L))
 			{
+				// load game
+				eg::EGSave sv;
+				sv.LoadFromFile(data->savegameFilename,data->SaveData);
+
+				// start the gameplay manager
+				eg::EGGame* gam;
+				gam = data->g;
+				gam->startGameplay(eg::LOAD_GAME);
+
+				// tell the main loop to step and render the gameplay
 				data->current_state = 2;
 			}
 
+
 		break;
+
+
+
+		case 2: // in gameplay
+
+			eg::EGGame* gam;
+			gam = data->g;
+			int res = gam->step();
+
+			if(res != 0)
+				return res;
+
+		break;
+
 	}
 
 

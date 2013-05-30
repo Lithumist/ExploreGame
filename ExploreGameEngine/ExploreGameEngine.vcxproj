@@ -13,6 +13,7 @@
   <ItemGroup>
     <ClCompile Include="source\eg_map.cpp" />
     <ClCompile Include="source\event_receiver.cpp" />
+    <ClCompile Include="source\game.cpp" />
     <ClCompile Include="source\log.cpp" />
     <ClCompile Include="source\main.cpp" />
     <ClCompile Include="source\save.cpp" />
@@ -21,6 +22,7 @@
   <ItemGroup>
     <ClInclude Include="source\eg_map.h" />
     <ClInclude Include="source\event_receiver.h" />
+    <ClInclude Include="source\game.h" />
     <ClInclude Include="source\globals.h" />
     <ClInclude Include="source\log.h" />
     <ClInclude Include="source\save.h" />

@@ -12,4 +12,4 @@ Node number 5, name 'MeshVisual'
 Node number 6, name 'MeshVisual'
 Node number 7, name 'MeshPhysics'
 Finished loading map res/maps/test2/test2.irr
-Explore Game engine exited
+Quitting from pause screne

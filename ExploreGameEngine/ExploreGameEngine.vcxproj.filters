@@ -58,6 +58,12 @@
     <Filter Include="Source Files\game saves">
       <UniqueIdentifier>{e88c22e9-7ec9-48d1-9b47-76a50a0e8dce}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\gameplay management">
+      <UniqueIdentifier>{fe2e7308-4ac9-4618-b6af-f75079b21449}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gameplay management">
+      <UniqueIdentifier>{bd52f5e4-46fb-4cab-b9db-1904d2ea81ee}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\main.cpp">
@@ -78,6 +84,9 @@
     <ClCompile Include="source\save.cpp">
       <Filter>Source Files\game saves</Filter>
     </ClCompile>
+    <ClCompile Include="source\game.cpp">
+      <Filter>Source Files\gameplay management</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\event_receiver.h">
@@ -97,6 +106,9 @@
     </ClInclude>
     <ClInclude Include="source\save.h">
       <Filter>Header Files\game saves</Filter>
+    </ClInclude>
+    <ClInclude Include="source\game.h">
+      <Filter>Header Files\gameplay management</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
