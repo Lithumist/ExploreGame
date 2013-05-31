@@ -150,7 +150,7 @@ namespace eg
 
 
 	// Loads map from a file
-	bool EGMap::loadFromFile(std::string filename)
+	bool EGMap::loadFromFile(std::string filename, std::string map_name)
 	{
 
 		// Define tracking variables
@@ -173,7 +173,7 @@ namespace eg
 
 
 		// Load .irr file
-		GlobalData->smgr->loadScene(filename.c_str());
+		GlobalData->smgr->loadScene(filename.c_str() + '/' + filename.c_str());
 
 
 		// Create meta triangle selector
@@ -286,6 +286,11 @@ namespace eg
 		// Log
 		eg::log::log("Finished loading map " + filename);
 
+
+
+
+		// Execute map startup script
+		GlobalData->lua.ExecuteScript(filename + "/startup.lua");
 
 
 

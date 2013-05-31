@@ -23,6 +23,7 @@
 #include "globals.h"
 #include "log.h"
 #include "utils.h"
+#include "lua_wrap.h"
 
 
 
@@ -87,7 +88,7 @@ namespace eg
 		void setData(global* data);
 
 
-		bool loadFromFile(std::string filename);
+		bool loadFromFile(std::string filename, std::string map_name);
 
 
 
