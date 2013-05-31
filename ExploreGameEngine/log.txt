@@ -2,7 +2,7 @@ Explore Game engine started
 Created Irrlicht device
 Window set up
 Loaded font file res/fonts/trololol.xml
-Loading map res/maps/test2/test2.irr
+Loading map res/maps/test2
 Node number 0, name ''
 Node number 1, name 'MeshVisual'
 Node number 2, name 'MeshPhysics'
@@ -15,5 +15,5 @@ Node number 8, name 'MapSpot0000'
 Map Spot with id 0. At 59.1143,109.819,213.86
 Node number 9, name 'MapSpot0069'
 Map Spot with id 69. At 60.7815,61.1308,1.60971
-Finished loading map res/maps/test2/test2.irr
+Finished loading map res/maps/test2
 Explore Game engine exited

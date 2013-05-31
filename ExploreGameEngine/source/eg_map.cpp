@@ -90,14 +90,14 @@ namespace eg
 
 
 	// Loads map from a file
-	EGMap::EGMap(global* data, std::string filename)
+	EGMap::EGMap(global* data, std::string filename, std::string map_name)
 	{
 		if(!data)
 			eg::log::log("Bad pointer being passed to EGMap::EGMap(global* data, std::string filename)");
 
 		GlobalData = data;
 		setUpKeyMap();
-		loadFromFile(filename);
+		loadFromFile(filename, map_name);
 	}
 
 
@@ -173,7 +173,8 @@ namespace eg
 
 
 		// Load .irr file
-		GlobalData->smgr->loadScene(filename.c_str() + '/' + filename.c_str());
+		std::string file = filename + "/" + map_name + ".irr";
+		GlobalData->smgr->loadScene(file.c_str());
 
 
 		// Create meta triangle selector

@@ -11,7 +11,8 @@ namespace eg
 
 
 	// On new game
-	const std::string EGGame::firstMapFilename = "res/maps/test2/test2.irr";
+	const std::string EGGame::firstMapFilename = "res/maps/test2";
+	const std::string EGGame::firstMapName = "test2";
 
 
 
@@ -96,7 +97,7 @@ namespace eg
 		if(type == NEW_GAME)
 		{
 			// Load test level
-			currentMap.loadFromFile(EGGame::firstMapFilename);
+			currentMap.loadFromFile(EGGame::firstMapFilename, eg::EGGame::firstMapName);
 		}
 		else if(type == LOAD_GAME)
 		{

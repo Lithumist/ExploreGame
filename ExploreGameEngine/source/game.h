@@ -47,7 +47,9 @@ namespace eg
 	private:
 
 
+		static const std::string firstMapName;
 		static const std::string firstMapFilename; // The map that is loaded on 'new game'
+		
 
 
 		eg::global* GlobalData;

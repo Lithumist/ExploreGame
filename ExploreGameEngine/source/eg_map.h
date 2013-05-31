@@ -79,7 +79,7 @@ namespace eg
 
 		EGMap();
 		EGMap(global* data); // blank map
-		EGMap(global* data, std::string filename); // loads a map from a file
+		EGMap(global* data, std::string filename, std::string map_name); // loads a map from a file
 
 
 		void clear(); // must be called before any other maps are loaded
