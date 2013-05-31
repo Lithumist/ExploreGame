@@ -16,4 +16,7 @@ Map Spot with id 0. At 59.1143,109.819,213.86
 Node number 9, name 'MapSpot0069'
 Map Spot with id 69. At 60.7815,61.1308,1.60971
 Finished loading map res/maps/test2
+running script res/maps/test2/startup.lua
+Hello world from lua!
+finished script res/maps/test2/startup.lua
 Explore Game engine exited

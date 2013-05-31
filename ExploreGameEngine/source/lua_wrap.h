@@ -61,6 +61,9 @@ public:
 	void ExecuteCode(std::string lua_code);
 
 
+	static int LuaLog(lua_State* l);
+
+
 	lua_State* GetState();
 
 
