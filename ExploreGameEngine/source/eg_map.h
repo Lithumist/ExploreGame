@@ -38,6 +38,15 @@ using namespace gui;
 
 
 
+
+
+
+#define ACTION_TRIGGER_RANGE 50
+
+
+
+
+
 namespace eg
 {
 
@@ -57,6 +66,48 @@ namespace eg
 
 
 
+	class triggercollision
+	{
+	public:
+
+		triggercollision();
+		triggercollision(float X, float Y, float Z, core::aabbox3d<float> BOX, std::string filename);
+		void setData(float X, float Y, float Z, core::aabbox3d<float> BOX, std::string filename);
+
+		bool PointInside(float X, float Y, float Z);
+		bool BoundingBoxInside(core::aabbox3d<float> box);
+		
+		float x,y,z;
+		core::aabbox3d<float> bbox;
+		std::string luafilename;
+	};
+
+
+
+
+
+	class triggeraction
+	{
+	public:
+
+		triggeraction();
+		triggeraction(float X, float Y, float Z, std::string filename);
+		void setData(float X, float Y, float Z, std::string filename);
+
+		bool CloseEnough(float X, float Y, float Z);
+
+		float x,y,z;
+		std::string luafilename;
+	};
+
+
+
+
+
+
+
+
+
 	class EGMap
 	{
 	private:
@@ -69,6 +120,8 @@ namespace eg
 
 
 		std::map<int,mapspot> mapSpots;
+		std::vector<triggercollision> collisionTriggers;
+		std::vector<triggeraction> actionTriggers;
 
 
 

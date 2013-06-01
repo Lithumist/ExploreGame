@@ -48,6 +48,114 @@ namespace eg
 
 
 
+
+	//
+	// triggercollision
+	//
+
+	triggercollision::triggercollision()
+	{
+		x=y=z=0;
+		luafilename = "";
+	}
+
+	triggercollision::triggercollision(float X, float Y, float Z, core::aabbox3d<float> BOX, std::string filename)
+	{
+		setData(X,Y,Z,BOX,filename);
+	}
+
+	void triggercollision::setData(float X, float Y, float Z, core::aabbox3d<float> BOX, std::string filename)
+	{
+		x = X;
+		y = Y;
+		z = Z;
+		bbox = BOX;
+		luafilename = filename;
+	}
+
+	bool triggercollision::PointInside(float X, float Y, float Z)
+	{
+		return bbox.isPointInside(vector3d<f32>(X,Y,Z));
+	}
+
+	bool triggercollision::BoundingBoxInside(core::aabbox3d<float> box)
+	{
+		return bbox.intersectsWithBox(box);
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	//
+	// triggeraction
+	//
+	triggeraction::triggeraction()
+	{
+		x=y=z=0;
+		luafilename = "";
+	}
+
+
+	triggeraction::triggeraction(float X, float Y, float Z, std::string filename)
+	{
+		setData(X,Y,Z,filename);
+	}
+
+
+	void triggeraction::setData(float X, float Y, float Z, std::string filename)
+	{
+		x = X;
+		y = Y;
+		z = Z;
+		luafilename = filename;
+	}
+
+
+	bool triggeraction::CloseEnough(float X, float Y, float Z) // TODO: implement this
+	{
+		eg::log::warning("triggeraction::CloseEnough() is not implemented, always returns false");
+		return false;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	//
 	// EGMap
 	//
@@ -83,6 +191,7 @@ namespace eg
 	void EGMap::clear()
 	{
 		mapSpots.clear();
+		collisionTriggers.clear();
 		playerStartX = 0.0f;
 		playerStartY = 0.0f;
 	}
@@ -226,6 +335,24 @@ namespace eg
 				eg::log::log("Map Spot with id " + ut::toString(id) + ". At " + ut::toString(node->getPosition().X) + "," + ut::toString(node->getPosition().Y) + "," +ut::toString(node->getPosition().Z));
 
 				mapSpots[id] = mapspot(node->getPosition().X, node->getPosition().Y, node->getPosition().Z);
+			}
+
+			else if(rname.substr(0,rname.length()-4) == "TriggerAction")
+			{
+				std::string luafile =rname.substr(rname.length()-4,rname.length());
+				luafile += ".lua";
+				eg::log::log("Action trigger with lua file " + luafile + ". At " + ut::toString(node->getPosition().X) + "," + ut::toString(node->getPosition().Y) + "," +ut::toString(node->getPosition().Z));
+
+				actionTriggers.push_back(triggeraction(node->getPosition().X, node->getPosition().Y, node->getPosition().Z, filename + "/" + luafile));
+			}
+
+			else if(rname.substr(0,rname.length()-4) == "TriggerCollision")
+			{
+				std::string luafile =rname.substr(rname.length()-4,rname.length());
+				luafile += ".lua";
+				eg::log::log("Collision trigger with lua file " + luafile + ". At " + ut::toString(node->getPosition().X) + "," + ut::toString(node->getPosition().Y) + "," +ut::toString(node->getPosition().Z));
+
+				collisionTriggers.push_back(triggercollision(node->getPosition().X, node->getPosition().Y, node->getPosition().Z, node->getBoundingBox(), filename + "/" + luafile));
 			}
 
 
