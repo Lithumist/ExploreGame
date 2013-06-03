@@ -189,6 +189,24 @@ namespace eg
 			if(currentMap.actionTriggers[t].CloseEnough(currentMap.getCamera()->getPosition().X,currentMap.getCamera()->getPosition().Y,currentMap.getCamera()->getPosition().Z))
 			{
 				eg::log::log("Close!");
+				// TODO: make it only execute once
+				//GlobalData->lua.ExecuteScript(currentMap.actionTriggers[t].luafilename);
+			}
+		}
+
+
+
+
+
+		// Test collision triggers
+		// TODO: Fix this, idk but it seems to always think that the bounding boxes are touching.
+		for(int t=0; t<currentMap.collisionTriggers.size(); t++)
+		{
+			if(currentMap.collisionTriggers[t].PointInside(currentMap.getCamera()->getPosition().X,currentMap.getCamera()->getPosition().Y,currentMap.getCamera()->getPosition().Z))
+			{
+				eg::log::log("Collision!");
+				// TODO: make it only execute once
+				//GlobalData->lua.ExecuteScript(currentMap.collisionTriggers[t].luafilename);
 			}
 		}
 
