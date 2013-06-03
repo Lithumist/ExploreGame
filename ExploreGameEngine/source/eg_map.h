@@ -41,7 +41,7 @@ using namespace gui;
 
 
 
-#define ACTION_TRIGGER_RANGE 50
+#define ACTION_TRIGGER_RANGE 50.0f
 
 
 
@@ -120,14 +120,18 @@ namespace eg
 
 
 		std::map<int,mapspot> mapSpots;
-		std::vector<triggercollision> collisionTriggers;
-		std::vector<triggeraction> actionTriggers;
+		
 
 
 
 		void setUpKeyMap();
 
 	public:
+
+		// idgaf about OO
+		std::vector<triggercollision> collisionTriggers;
+		std::vector<triggeraction> actionTriggers;
+
 
 
 		EGMap();

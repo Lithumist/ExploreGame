@@ -161,11 +161,35 @@ namespace eg
 
 
 
+
 		// Handle quitting from pause
 		if(GlobalData->isPaused && GlobalData->receiver.IsKeyDown(KEY_KEY_Q))
 		{
 			eg::log::log("Quitting from pause screne");
 			return 1;
+		}
+
+
+
+
+
+
+		// Prevent the rest of the code from running if the game is paused
+		if(GlobalData->isPaused)
+			return 0;
+
+
+
+
+
+
+		// Test action triggers
+		for(int t=0; t<currentMap.actionTriggers.size(); t++)
+		{
+			if(currentMap.actionTriggers[t].CloseEnough(currentMap.getCamera()->getPosition().X,currentMap.getCamera()->getPosition().Y,currentMap.getCamera()->getPosition().Z))
+			{
+				eg::log::log("Close!");
+			}
 		}
 
 

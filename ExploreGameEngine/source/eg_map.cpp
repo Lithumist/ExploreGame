@@ -127,8 +127,12 @@ namespace eg
 
 	bool triggeraction::CloseEnough(float X, float Y, float Z) // TODO: implement this
 	{
-		eg::log::warning("triggeraction::CloseEnough() is not implemented, always returns false");
-		return false;
+		float distance = sqrt(  ((X-x)*(X-x)) + ((Y-y)*(Y-y)) + ((Z-z)*(Z-z))  );
+		if(distance > ACTION_TRIGGER_RANGE)
+			return false;
+		else
+			return true;
+
 	}
 
 
