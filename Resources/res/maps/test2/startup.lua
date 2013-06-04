@@ -1,1 +1,1 @@
--- test2 map startup scriptEG_Log("Hello world from lua!");
+-- test2 map startup scriptEG_Log("Hello world from lua!");EG_DamagePlayer(50);

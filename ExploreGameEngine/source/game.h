@@ -94,6 +94,7 @@ namespace eg
 
 
 		bool damagePlayer(int dmg); // returns true when player is dead
+		//static int LUA_damagePlayer(lua_State* l);
 
 		int step();
 		void draw();

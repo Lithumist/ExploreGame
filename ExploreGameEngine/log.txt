@@ -23,110 +23,6 @@ Finished loading map res/maps/test2
 running script res/maps/test2/startup.lua
 Hello world from lua!
 finished script res/maps/test2/startup.lua
-HP: 100
-HP: 99
-HP: 99
-HP: 98
-HP: 98
-HP: 97
-HP: 97
-HP: 96
-HP: 96
-HP: 95
-HP: 95
-HP: 94
-HP: 94
-HP: 93
-HP: 93
-HP: 92
-HP: 92
-HP: 91
-HP: 91
-HP: 90
-HP: 90
-HP: 89
-HP: 89
-HP: 88
-HP: 88
-HP: 87
-HP: 87
-HP: 86
-HP: 86
-HP: 85
-HP: 85
-HP: 84
-HP: 84
-HP: 83
-HP: 83
-HP: 82
-HP: 82
-HP: 81
-HP: 81
-HP: 80
-HP: 80
-HP: 79
-HP: 79
-HP: 78
-HP: 78
-HP: 77
-HP: 77
-HP: 76
-HP: 76
-HP: 75
-HP: 75
-HP: 74
-HP: 74
-HP: 73
-HP: 73
-HP: 72
-HP: 72
-HP: 71
-HP: 71
-HP: 70
-HP: 70
-HP: 69
-HP: 69
-HP: 68
-HP: 68
-HP: 67
-HP: 67
-HP: 66
-HP: 66
-HP: 65
-HP: 65
-HP: 64
-HP: 64
-HP: 63
-HP: 63
-HP: 62
-HP: 62
-HP: 61
-HP: 61
-HP: 60
-HP: 60
-HP: 59
-HP: 59
-HP: 58
-HP: 58
-HP: 57
-HP: 57
-HP: 56
-HP: 56
-HP: 55
-HP: 55
-HP: 54
-HP: 54
-HP: 53
-HP: 53
-HP: 52
-HP: 52
-HP: 51
-HP: 51
-HP: 50
-HP: 50
-HP: 49
-HP: 49
-HP: 48
 Close!
 Close!
 Close!
@@ -170,8 +66,6 @@ Close!
 Close!
 Close!
 Close!
-HP: 48
-HP: 47
 Close!
 Close!
 Close!
@@ -197,8 +91,6 @@ Close!
 Close!
 Close!
 Close!
-HP: 47
-HP: 46
 Close!
 Close!
 Close!
@@ -222,8 +114,6 @@ Close!
 Close!
 Close!
 Close!
-HP: 46
-HP: 45
 Close!
 Close!
 Close!
@@ -246,8 +136,6 @@ Close!
 Close!
 Close!
 Close!
-HP: 45
-HP: 44
 Close!
 Close!
 Close!
@@ -290,8 +178,6 @@ Close!
 Close!
 Close!
 Close!
-HP: 44
-HP: 43
 Close!
 Close!
 Close!
@@ -327,8 +213,6 @@ Close!
 Close!
 Close!
 Close!
-HP: 43
-HP: 42
 Close!
 Close!
 Close!
@@ -364,8 +248,6 @@ Close!
 Close!
 Close!
 Close!
-HP: 42
-HP: 41
 Close!
 Close!
 Close!
@@ -392,377 +274,4 @@ Close!
 Close!
 Close!
 Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-HP: 41
-HP: 40
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-HP: 40
-HP: 39
-HP: 39
-HP: 38
-HP: 38
-HP: 37
-HP: 37
-HP: 36
-HP: 36
-HP: 35
-HP: 35
-HP: 34
-HP: 34
-HP: 33
-HP: 33
-HP: 32
-HP: 32
-HP: 31
-HP: 31
-HP: 30
-HP: 30
-HP: 29
-HP: 29
-HP: 28
-HP: 28
-HP: 27
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-HP: 27
-HP: 26
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-HP: 26
-HP: 25
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-HP: 25
-HP: 24
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-HP: 24
-HP: 23
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-HP: 23
-HP: 22
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-HP: 22
-HP: 21
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-HP: 21
-HP: 20
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-Close!
-HP: 20
-HP: 19
-Close!
-HP: 19
-HP: 18
-HP: 18
-HP: 17
-HP: 17
-HP: 16
-HP: 16
-HP: 15
-HP: 15
-HP: 14
-HP: 14
-HP: 13
-HP: 13
-HP: 12
-HP: 12
-HP: 11
-HP: 11
-HP: 10
-HP: 10
-HP: 9
-HP: 9
-HP: 8
-HP: 8
-HP: 7
-HP: 7
-HP: 6
-HP: 6
-HP: 5
-HP: 5
-HP: 4
-HP: 4
-HP: 3
-HP: 3
-HP: 2
-HP: 2
-HP: 1
-HP: 1
-HP: 0
-HP: 0
-HP: -1
-HP: -1
-HP: -1
-HP: -1
-HP: -1
-HP: -1
-HP: -1
-HP: -1
-HP: -1
-HP: -1
-HP: -1
-HP: -1
-HP: -1
-HP: -1
-HP: -1
-HP: -1
-HP: -1
 Quitting from pause screne

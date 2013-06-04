@@ -18,10 +18,11 @@ namespace eg
 
 
 
+
 	// Default constructor
 	EGGame::EGGame()
 	{
-		GlobalData = NULL;
+		EGGame::GlobalData = NULL;
 	}
 
 
@@ -30,13 +31,13 @@ namespace eg
 	// Constructor with global data pointer
 	EGGame::EGGame(eg::global* data)
 	{
-		GlobalData = NULL;
+		EGGame::GlobalData = NULL;
 
 		if(!data)
 			eg::log::log("Bad pointer being passed to EGGame::EGGame(eg::global* data)");
 
-		GlobalData = data;
-		currentMap.setData(GlobalData);
+		EGGame::GlobalData = data;
+		currentMap.setData(EGGame::GlobalData);
 
 		init();
 	}
@@ -51,8 +52,8 @@ namespace eg
 		if(!data)
 			eg::log::log("Bad pointer being passed to EGGame::setData(eg::global* data)");
 
-		GlobalData = data;
-		currentMap.setData(GlobalData);
+		EGGame::GlobalData = data;
+		currentMap.setData(EGGame::GlobalData);
 
 		init();
 	}
@@ -70,15 +71,15 @@ namespace eg
 	// Private initialization function
 	void EGGame::init()
 	{
-		if(!GlobalData)
+		if(!EGGame::GlobalData)
 		{
 			eg::log::error("EGGame::init() can't execute because global data pointer is not defined");
 			return;
 		}
 
 
-		GlobalData->isPaused = false;
-		GlobalData->escapePressedPrev = false;
+		EGGame::GlobalData->isPaused = false;
+		EGGame::GlobalData->escapePressedPrev = false;
 
 	}
 
@@ -100,8 +101,8 @@ namespace eg
 			currentMap.loadFromFile(EGGame::firstMapFilename, eg::EGGame::firstMapName);
 
 			// Set up player
-			GlobalData->playerHp = PLAYER_STARTING_HP;
-			GlobalData->playerMaxHp = PLAYER_STARTING_HP;
+			EGGame::GlobalData->playerHp = PLAYER_STARTING_HP;
+			EGGame::GlobalData->playerMaxHp = PLAYER_STARTING_HP;
 		}
 		else if(type == LOAD_GAME)
 		{
@@ -126,14 +127,49 @@ namespace eg
 	// damagePlayer
 	bool EGGame::damagePlayer(int dmg)
 	{
-		GlobalData->playerHp -= dmg;
-		if(GlobalData->playerHp < 0)
+		EGGame::GlobalData->playerHp -= dmg;
+		if(EGGame::GlobalData->playerHp < 0)
 		{
-			GlobalData->playerHp = -1;
+			EGGame::GlobalData->playerHp = -1;
 			return true;
 		}
 		return false;
 	}
+
+	/*
+	int EGGame::LUA_damagePlayer(lua_State* l)
+	{
+		eg::log::log("EGGame::LUA_damagePlayer()");
+		int n = lua_gettop(l);
+		if(n != 1)
+		{
+			eg::log::error(	  "EG_DamagePlayer only takes 1 argument.");
+			lua_pushstring(l, "EG_DamagePlayer only takes 1 argument.");
+			lua_error(l);
+			return 0;
+		}
+
+
+		eg::log::log("HP: " + ut::toString(EGGame::GlobalData->playerHp));
+		EGGame::GlobalData->playerHp -= (int)lua_tointeger(l,1);
+		eg::log::log("HP: " + ut::toString(EGGame::GlobalData->playerHp));
+		if(EGGame::GlobalData->playerHp < 0)
+		{
+			EGGame::GlobalData->playerHp = -1;
+			// return true
+			//lua_pushnumber(l,1);
+			//return 1;
+		}
+		eg::log::log("HP: " + ut::toString(EGGame::GlobalData->playerHp));
+
+
+		// return false
+		//lua_pushnumber(l,0);
+		//return 1;
+
+		return 0;
+	}
+	*/
 
 
 
@@ -153,12 +189,12 @@ namespace eg
 	void EGGame::draw()
 	{
 
-		if(!GlobalData->isPaused)
+		if(!EGGame::GlobalData->isPaused)
 		{
-			GlobalData->driver->beginScene(true, true, SColor(255,100,101,140));
+			EGGame::GlobalData->driver->beginScene(true, true, SColor(255,100,101,140));
 
 			// Draw 3D scene
-			GlobalData->smgr->drawAll();
+			EGGame::GlobalData->smgr->drawAll();
 
 				/////////////
 				// Draw HUD
@@ -166,10 +202,10 @@ namespace eg
 
 				// Draw HP bar
 				float width = ((float)GlobalData->playerHp/(float)GlobalData->playerMaxHp)*(float)PLAYER_HP_BAR_FULL_WIDTH;
-				GlobalData->driver->draw2DRectangle( rect<s32>(PLAYER_HP_BAR_X,PLAYER_HP_BAR_Y,PLAYER_HP_BAR_X+( PLAYER_HP_BAR_FULL_WIDTH ),PLAYER_HP_BAR_Y+PLAYER_HP_BAR_HEIGHT) , SColor(255,255,0,0) ,  SColor(255,255,0,0) ,  SColor(255,255,0,0) ,  SColor(255,255,0,0) );
-				GlobalData->driver->draw2DRectangle( rect<s32>(PLAYER_HP_BAR_X,PLAYER_HP_BAR_Y,PLAYER_HP_BAR_X+( (int)width ),PLAYER_HP_BAR_Y+PLAYER_HP_BAR_HEIGHT) , SColor(255,0,255,0) ,  SColor(255,0,255,0) ,  SColor(255,0,255,0) ,  SColor(255,0,255,0) );
+				EGGame::GlobalData->driver->draw2DRectangle( rect<s32>(PLAYER_HP_BAR_X,PLAYER_HP_BAR_Y,PLAYER_HP_BAR_X+( PLAYER_HP_BAR_FULL_WIDTH ),PLAYER_HP_BAR_Y+PLAYER_HP_BAR_HEIGHT) , SColor(255,255,0,0) ,  SColor(255,255,0,0) ,  SColor(255,255,0,0) ,  SColor(255,255,0,0) );
+				EGGame::GlobalData->driver->draw2DRectangle( rect<s32>(PLAYER_HP_BAR_X,PLAYER_HP_BAR_Y,PLAYER_HP_BAR_X+( (int)width ),PLAYER_HP_BAR_Y+PLAYER_HP_BAR_HEIGHT) , SColor(255,0,255,0) ,  SColor(255,0,255,0) ,  SColor(255,0,255,0) ,  SColor(255,0,255,0) );
 
-			GlobalData->driver->endScene();
+			EGGame::GlobalData->driver->endScene();
 		}
 
 
@@ -198,18 +234,18 @@ namespace eg
 	{
 
 		// Turn pause on/off
-		if(!GlobalData->escapePressedPrev && GlobalData->receiver.IsKeyDown(KEY_ESCAPE))
+		if(!EGGame::GlobalData->escapePressedPrev && EGGame::GlobalData->receiver.IsKeyDown(KEY_ESCAPE))
 		{
-			GlobalData->isPaused = !GlobalData->isPaused;
+			EGGame::GlobalData->isPaused = !EGGame::GlobalData->isPaused;
 			eg::log::log_iostream("toggle pause");
 		}
-		GlobalData->escapePressedPrev = GlobalData->receiver.IsKeyDown(KEY_ESCAPE);
+		EGGame::GlobalData->escapePressedPrev = EGGame::GlobalData->receiver.IsKeyDown(KEY_ESCAPE);
 
 
 
 
 		// Handle quitting from pause
-		if(GlobalData->isPaused && GlobalData->receiver.IsKeyDown(KEY_KEY_Q))
+		if(EGGame::GlobalData->isPaused && EGGame::GlobalData->receiver.IsKeyDown(KEY_KEY_Q))
 		{
 			eg::log::log("Quitting from pause screne");
 			return 1;
@@ -221,7 +257,7 @@ namespace eg
 
 
 		// Prevent the rest of the code from running if the game is paused
-		if(GlobalData->isPaused)
+		if(EGGame::GlobalData->isPaused)
 			return 0;
 
 
@@ -230,7 +266,7 @@ namespace eg
 
 
 		// Test action triggers
-		for(int t=0; t<currentMap.actionTriggers.size(); t++)
+		for(unsigned int t=0; t<currentMap.actionTriggers.size(); t++)
 		{
 			if(currentMap.actionTriggers[t].CloseEnough(currentMap.getCamera()->getPosition().X,currentMap.getCamera()->getPosition().Y,currentMap.getCamera()->getPosition().Z))
 			{
@@ -246,7 +282,7 @@ namespace eg
 
 		// Test collision triggers
 		// TODO: Fix this, idk but it seems to always think that the bounding boxes are touching.
-		for(int t=0; t<currentMap.collisionTriggers.size(); t++)
+		for(unsigned int t=0; t<currentMap.collisionTriggers.size(); t++)
 		{
 			if(currentMap.collisionTriggers[t].PointInside(currentMap.getCamera()->getPosition().X,currentMap.getCamera()->getPosition().Y,currentMap.getCamera()->getPosition().Z))
 			{
@@ -261,15 +297,15 @@ namespace eg
 
 
 		// Test HP bar
-		if(GlobalData->receiver.IsKeyDown(irr::KEY_KEY_K) && !kDownPrev)
+		if(EGGame::GlobalData->receiver.IsKeyDown(irr::KEY_KEY_K) && !kDownPrev)
 		{
-			eg::log::log("HP: " + ut::toString(GlobalData->playerHp));
+			eg::log::log("HP: " + ut::toString(EGGame::GlobalData->playerHp));
 			damagePlayer(1);
-			eg::log::log("HP: " + ut::toString(GlobalData->playerHp));
+			eg::log::log("HP: " + ut::toString(EGGame::GlobalData->playerHp));
 		}
 
 
-		kDownPrev = GlobalData->receiver.IsKeyDown(irr::KEY_KEY_K);
+		kDownPrev = EGGame::GlobalData->receiver.IsKeyDown(irr::KEY_KEY_K);
 
 
 
