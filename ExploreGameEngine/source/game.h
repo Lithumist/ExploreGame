@@ -29,6 +29,19 @@
 
 
 
+#define PLAYER_STARTING_HP 100
+
+#define PLAYER_HP_BAR_X 8
+#define PLAYER_HP_BAR_Y 640
+#define PLAYER_HP_BAR_FULL_WIDTH 128
+#define PLAYER_HP_BAR_HEIGHT 8
+
+
+
+
+
+
+
 
 namespace eg
 {
@@ -56,6 +69,13 @@ namespace eg
 		eg::EGMap currentMap;
 
 
+
+
+		bool kDownPrev;
+
+
+
+
 		void init();
 
 
@@ -71,6 +91,9 @@ namespace eg
 
 
 		void startGameplay(GAME_START_TYPE type);
+
+
+		bool damagePlayer(int dmg); // returns true when player is dead
 
 		int step();
 		void draw();

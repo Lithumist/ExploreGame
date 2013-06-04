@@ -70,6 +70,10 @@ namespace eg
 		bool isPaused;
 		bool escapePressedPrev;
 
+		// player info
+		int playerHp;
+		int playerMaxHp;
+
 	};
 
 }

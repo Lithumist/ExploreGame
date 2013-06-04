@@ -98,10 +98,41 @@ namespace eg
 		{
 			// Load test level
 			currentMap.loadFromFile(EGGame::firstMapFilename, eg::EGGame::firstMapName);
+
+			// Set up player
+			GlobalData->playerHp = PLAYER_STARTING_HP;
+			GlobalData->playerMaxHp = PLAYER_STARTING_HP;
 		}
 		else if(type == LOAD_GAME)
 		{
 		}
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	// damagePlayer
+	bool EGGame::damagePlayer(int dmg)
+	{
+		GlobalData->playerHp -= dmg;
+		if(GlobalData->playerHp < 0)
+		{
+			GlobalData->playerHp = -1;
+			return true;
+		}
+		return false;
 	}
 
 
@@ -125,9 +156,24 @@ namespace eg
 		if(!GlobalData->isPaused)
 		{
 			GlobalData->driver->beginScene(true, true, SColor(255,100,101,140));
+
+			// Draw 3D scene
 			GlobalData->smgr->drawAll();
+
+				/////////////
+				// Draw HUD
+				/////////////
+
+				// Draw HP bar
+				float width = ((float)GlobalData->playerHp/(float)GlobalData->playerMaxHp)*(float)PLAYER_HP_BAR_FULL_WIDTH;
+				GlobalData->driver->draw2DRectangle( rect<s32>(PLAYER_HP_BAR_X,PLAYER_HP_BAR_Y,PLAYER_HP_BAR_X+( PLAYER_HP_BAR_FULL_WIDTH ),PLAYER_HP_BAR_Y+PLAYER_HP_BAR_HEIGHT) , SColor(255,255,0,0) ,  SColor(255,255,0,0) ,  SColor(255,255,0,0) ,  SColor(255,255,0,0) );
+				GlobalData->driver->draw2DRectangle( rect<s32>(PLAYER_HP_BAR_X,PLAYER_HP_BAR_Y,PLAYER_HP_BAR_X+( (int)width ),PLAYER_HP_BAR_Y+PLAYER_HP_BAR_HEIGHT) , SColor(255,0,255,0) ,  SColor(255,0,255,0) ,  SColor(255,0,255,0) ,  SColor(255,0,255,0) );
+
 			GlobalData->driver->endScene();
 		}
+
+
+		
 
 	}
 
@@ -210,6 +256,20 @@ namespace eg
 			}
 		}
 
+
+
+
+
+		// Test HP bar
+		if(GlobalData->receiver.IsKeyDown(irr::KEY_KEY_K) && !kDownPrev)
+		{
+			eg::log::log("HP: " + ut::toString(GlobalData->playerHp));
+			damagePlayer(1);
+			eg::log::log("HP: " + ut::toString(GlobalData->playerHp));
+		}
+
+
+		kDownPrev = GlobalData->receiver.IsKeyDown(irr::KEY_KEY_K);
 
 
 
