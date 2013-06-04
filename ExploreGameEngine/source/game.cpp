@@ -23,6 +23,9 @@ namespace eg
 	EGGame::EGGame()
 	{
 		EGGame::GlobalData = NULL;
+
+		mouseRelease = false;
+		mDownPrev = false;
 	}
 
 
@@ -189,7 +192,7 @@ namespace eg
 	void EGGame::draw()
 	{
 
-		if(!EGGame::GlobalData->isPaused)
+		if(!EGGame::GlobalData->isPaused || !mouseRelease)
 		{
 			EGGame::GlobalData->driver->beginScene(true, true, SColor(255,100,101,140));
 
@@ -255,10 +258,36 @@ namespace eg
 
 
 
+		// Handle debug mouse release
+		#ifdef EG_DEBUG_MODE
+		if(!mDownPrev && EGGame::GlobalData->receiver.IsKeyDown(KEY_KEY_M))
+		{
+			mouseRelease = !mouseRelease;
+			eg::log::log_iostream("toggle mouse release");
+		}
+		mDownPrev = EGGame::GlobalData->receiver.IsKeyDown(KEY_KEY_M);
+		#endif
+
+
+
+
 
 		// Prevent the rest of the code from running if the game is paused
-		if(EGGame::GlobalData->isPaused)
+		if(EGGame::GlobalData->isPaused && !mouseRelease)
 			return 0;
+
+
+
+
+
+		// Handle LUA debug prompt
+		//if(GlobalData->receiver.IsKeyDown(KEY_KEY_L))
+		//{
+			//std::string l;
+			//std::cout << "LUA DEBUG: ";
+			//std::getline(std::cin, l);
+			//GlobalData->lua.ExecuteCode(l);
+		//}
 
 
 
@@ -284,7 +313,8 @@ namespace eg
 		// TODO: Fix this, idk but it seems to always think that the bounding boxes are touching.
 		for(unsigned int t=0; t<currentMap.collisionTriggers.size(); t++)
 		{
-			if(currentMap.collisionTriggers[t].PointInside(currentMap.getCamera()->getPosition().X,currentMap.getCamera()->getPosition().Y,currentMap.getCamera()->getPosition().Z))
+			//if(currentMap.collisionTriggers[t].PointInside(currentMap.getCamera()->getPosition().X,currentMap.getCamera()->getPosition().Y,currentMap.getCamera()->getPosition().Z))
+			if(currentMap.collisionTriggers[t].BoundingBoxInside(currentMap.getCamera()->getTransformedBoundingBox()))
 			{
 				eg::log::log("Collision!");
 				// TODO: make it only execute once

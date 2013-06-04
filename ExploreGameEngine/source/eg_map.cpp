@@ -356,7 +356,7 @@ namespace eg
 				luafile += ".lua";
 				eg::log::log("Collision trigger with lua file " + luafile + ". At " + ut::toString(node->getPosition().X) + "," + ut::toString(node->getPosition().Y) + "," +ut::toString(node->getPosition().Z));
 
-				collisionTriggers.push_back(triggercollision(node->getPosition().X, node->getPosition().Y, node->getPosition().Z, node->getBoundingBox(), filename + "/" + luafile));
+				collisionTriggers.push_back(triggercollision(node->getPosition().X, node->getPosition().Y, node->getPosition().Z, node->getTransformedBoundingBox(), filename + "/" + luafile));
 			}
 
 
