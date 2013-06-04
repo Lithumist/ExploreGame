@@ -87,7 +87,7 @@ int main()
 	}
 	eg::log::log("Created Irrlicht device");
 
-	GlobalData.window_caption = L"ExploreGame";
+	GlobalData.window_caption = L"Ruin";
 	GlobalData.device->setWindowCaption(GlobalData.window_caption.c_str());
 
 	GlobalData.driver = GlobalData.device->getVideoDriver();
