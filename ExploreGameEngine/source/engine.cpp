@@ -9,11 +9,36 @@ namespace explore
 
 
 	// Initializes the engine and low level systems.
-	void Engine::init()
+	bool Engine::init()
 	{
-		running = false;
 
+		// Set the engine to be running and clear any states.
+		running = true;
 		states.clear();
+
+
+		// Set up Irrlicht and the rendering window.
+		window_width = 960;
+		window_height = 656;
+		device = createDevice(video::EDT_OPENGL, dimension2d<u32>(window_width,window_height), 16, false, false, false, &receiver);
+		if(!device)
+		{
+			return false;
+		}
+
+
+		// Set the window caption.
+		device->setWindowCaption(window_caption.c_str());
+
+
+		// Set up pointers to all Irrlicht systems.
+		driver = device->getVideoDriver();
+		smgr = device->getSceneManager();
+		guienv = device->getGUIEnvironment();
+
+
+		// Finished.
+		return true;
 	}
 
 
@@ -22,12 +47,16 @@ namespace explore
 	// Frees memory used by states and low level systems.
 	void Engine::free()
 	{
-		// cleanup the all states
+		// Cleanup the all states.
 		while(!states.empty())
 		{
 			states.back()->free();
 			states.pop_back();
 		}
+
+		
+		// Free Irrlicht.
+		device->drop();
 	}
 
 
@@ -87,7 +116,7 @@ namespace explore
 	{
 		for(unsigned int s=0; s<states.size(); s++)
 		{
-			states[s]->events();
+			states[s]->events(this);
 		}
 	}
 
@@ -97,7 +126,7 @@ namespace explore
 	{
 		for(unsigned int s=0; s<states.size(); s++)
 		{
-			states[s]->step();
+			states[s]->step(this);
 		}
 
 		return 0;
@@ -109,7 +138,7 @@ namespace explore
 	{
 		for(unsigned int s=0; s<states.size(); s++)
 		{
-			states[s]->draw();
+			states[s]->draw(this);
 		}
 	}
 

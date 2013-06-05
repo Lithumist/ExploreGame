@@ -13,6 +13,11 @@
 
 
 
+
+#include "engine.h"
+
+
+
 namespace explore
 {
 
@@ -30,14 +35,20 @@ namespace explore
 			virtual void pause() = 0;
 			virtual void resume() = 0;
 
-			virtual void events() = 0;
-			virtual int step() = 0;
-			virtual void draw() = 0;
+			virtual void events(Engine* _engine) = 0;
+			virtual int step(Engine* _engine) = 0;
+			virtual void draw(Engine* _engine) = 0;
+
+
+			void ChangeState(Engine* _engine, State* _state)
+			{
+				_engine->changeState(_state);
+			}
 
 
 		protected:
 
-			State();
+			State(){}
 
 	};
 

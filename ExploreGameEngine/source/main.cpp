@@ -43,6 +43,9 @@ using namespace gui;
 #include "save.h"
 #include "lua_wrap.h"
 
+#include "engine.h"
+#include "main_menu_state.h"
+
 
 
 
@@ -62,6 +65,32 @@ void draw(eg::global* data);
 
 int main()
 {
+
+	// Create and initialize the engine.
+	explore::Engine e;
+	if(!e.init())
+		return -1;
+
+
+	// Move into the main menu state.
+	e.changeState(explore::StateMainMenu::getInstance());
+
+
+	// Do the main loop.
+	while(e.isRunning())
+	{
+		e.events();
+		e.step();
+		e.draw();
+	}
+
+
+	// Free all memory and quit.
+	e.free();
+	return 0;
+
+
+	/*
 	// Open log file
 	eg::log::open("log.txt");
 	eg::log::log("Explore Game engine started");
@@ -170,6 +199,9 @@ int main()
 	eg::log::close();
 	return 0;
 
+
+
+	*/
 
 }
 

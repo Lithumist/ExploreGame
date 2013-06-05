@@ -11,22 +11,29 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="source\custom_event_receiver.cpp" />
     <ClCompile Include="source\eg_map.cpp" />
+    <ClCompile Include="source\engine.cpp" />
     <ClCompile Include="source\event_receiver.cpp" />
     <ClCompile Include="source\game.cpp" />
     <ClCompile Include="source\log.cpp" />
     <ClCompile Include="source\lua_wrap.cpp" />
     <ClCompile Include="source\main.cpp" />
+    <ClCompile Include="source\main_menu_state.cpp" />
     <ClCompile Include="source\save.cpp" />
     <ClCompile Include="source\utils.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="source\custom_event_receiver.h" />
     <ClInclude Include="source\eg_map.h" />
+    <ClInclude Include="source\engine.h" />
     <ClInclude Include="source\event_receiver.h" />
     <ClInclude Include="source\game.h" />
+    <ClInclude Include="source\game_state.h" />
     <ClInclude Include="source\globals.h" />
     <ClInclude Include="source\log.h" />
     <ClInclude Include="source\lua_wrap.h" />
+    <ClInclude Include="source\main_menu_state.h" />
     <ClInclude Include="source\save.h" />
     <ClInclude Include="source\utils.h" />
   </ItemGroup>
