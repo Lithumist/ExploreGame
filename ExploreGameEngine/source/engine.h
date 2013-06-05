@@ -42,14 +42,16 @@ namespace explore
 			void free();
 
 			void changeState(State* _new_state);
+			void pushState(State* _new_state);
+			void popState();
 
 			void events();
 			int step();
 			void draw();
 
-			void exit();
+			void exit(){ running = false; }
 
-			bool isRunning();
+			bool isRunning(){ return running; }
 
 
 
