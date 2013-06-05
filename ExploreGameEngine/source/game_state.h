@@ -29,7 +29,7 @@ namespace explore
 	{
 		public:
 
-			virtual void init() = 0;
+			virtual void init(Engine* _engine) = 0;
 			virtual void free() = 0;
 
 			virtual void pause() = 0;
@@ -45,10 +45,14 @@ namespace explore
 				_engine->changeState(_state);
 			}
 
+			bool loadedCorrectly(){ return loaded_correctly; }
+
 
 		protected:
 
 			State(){}
+
+			bool loaded_correctly;
 
 	};
 

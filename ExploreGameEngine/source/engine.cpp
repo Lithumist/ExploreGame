@@ -34,6 +34,7 @@ namespace explore
 
 
 		// Set the window caption.
+		window_caption = L"Explore Game";
 		device->setWindowCaption(window_caption.c_str());
 
 
@@ -97,7 +98,7 @@ namespace explore
 		}
 
 		states.push_back(_new_state);
-		states.back()->init();
+		states.back()->init(this);
 	}
 
 	// Push a new state onto the state stack.
@@ -109,7 +110,7 @@ namespace explore
 		}
 
 		states.push_back(_new_state);
-		states.back()->init();
+		states.back()->init(this);
 	}
 
 	// Pops the latest state off the stack.

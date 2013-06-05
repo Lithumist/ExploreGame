@@ -22,6 +22,12 @@
 
 
 
+#define FONT_COMIC_PATH "res/fonts/comicsans.xml"
+
+
+
+
+
 
 namespace explore
 {
@@ -37,7 +43,7 @@ namespace explore
 
 		public:
 
-			void init();
+			void init(Engine* _engine);
 			void free();
 
 			void pause();
@@ -58,6 +64,10 @@ namespace explore
 		private:
 
 			static StateMainMenu instance;
+
+
+			// The main menu font.
+			IGUIFont* font_comic;
 
 	};
 
