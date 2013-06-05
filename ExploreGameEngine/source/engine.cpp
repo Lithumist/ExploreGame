@@ -1,6 +1,7 @@
 // engine.cpp
 #include "engine.h"
 #include "game_state.h"
+#include "log.h"
 
 namespace explore
 {
@@ -13,8 +14,13 @@ namespace explore
 	{
 
 		// Set the engine to be running and clear any states.
-		running = true;
+		running = false;
 		states.clear();
+
+
+		// Open the log file
+		log_filename = "log.txt";
+		log::open(log_filename);
 
 
 		// Set up Irrlicht and the rendering window.
@@ -57,6 +63,10 @@ namespace explore
 		
 		// Free Irrlicht.
 		device->drop();
+
+
+		// Close the log file.
+		log::close();
 	}
 
 
@@ -140,6 +150,33 @@ namespace explore
 		{
 			states[s]->draw(this);
 		}
+	}
+
+
+
+
+
+
+
+
+
+
+
+	// Runs the engine.
+	int Engine::run()
+	{
+		running = true;
+
+
+		while(device->run())
+		{
+			events();
+			step();
+			draw();
+		}
+
+
+		return 0;
 	}
 
 

@@ -31,100 +31,28 @@
     <Filter Include="Source Files\states\menus\main menu">
       <UniqueIdentifier>{61e3e9dc-9576-4ecb-a368-c86f32063013}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\old code">
-      <UniqueIdentifier>{b8c1946c-0ac7-45b7-a1a1-4a52b4fd4162}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\old code\game saves">
-      <UniqueIdentifier>{d58ab8ba-2481-4d24-b6b8-94bd1153003e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\old code\gameplay management">
-      <UniqueIdentifier>{fe2e7308-4ac9-4618-b6af-f75079b21449}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\old code\globals">
-      <UniqueIdentifier>{d95a887a-d15b-488a-9b78-7b7db1f0a19c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\old code\Irrlicht shit">
-      <UniqueIdentifier>{d922ac4d-9866-4020-b1a1-c902463812e3}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\old code\Irrlicht shit\custom event receiver">
-      <UniqueIdentifier>{676dd70d-1932-48fe-8f77-ecc24923d707}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\old code\lua">
-      <UniqueIdentifier>{8fd4aa72-fffb-4d57-a73a-2fcffa7f5690}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\old code\map files">
-      <UniqueIdentifier>{2c5f302b-8a20-47fe-8af0-f7c19cfb35fc}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\old code\utilities">
-      <UniqueIdentifier>{e2e81013-4bc4-45da-a97d-ec4688aba844}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\old code\utilities\general">
-      <UniqueIdentifier>{731db987-b26a-4a59-8664-66ee77bb338c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\old code\utilities\logging">
-      <UniqueIdentifier>{e11d05d9-d496-4168-8516-1a5958521f2f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\old code">
-      <UniqueIdentifier>{1e48215d-cb25-467e-a852-cec92597ec57}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\old code\game saves">
-      <UniqueIdentifier>{e88c22e9-7ec9-48d1-9b47-76a50a0e8dce}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\old code\gameplay management">
-      <UniqueIdentifier>{bd52f5e4-46fb-4cab-b9db-1904d2ea81ee}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\old code\Irrlicht shit">
-      <UniqueIdentifier>{6106b4fe-be17-45d2-9c05-ebe1739431ea}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\old code\Irrlicht shit\custom event receiver">
-      <UniqueIdentifier>{1af78e59-0b33-4ff9-9c55-9b80cf659507}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\old code\lua">
-      <UniqueIdentifier>{0daaf1e2-6cdb-4e50-b9be-b11b5056f6b6}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\old code\map files">
-      <UniqueIdentifier>{3ab69bff-93a3-4ce2-85a2-51849ad0ea0f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\old code\utilities">
-      <UniqueIdentifier>{3bac89f2-27c7-40aa-9372-820ee388e262}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\old code\utilities\general">
-      <UniqueIdentifier>{719167e3-8679-4cc0-aa56-fde6b2e9b8c9}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\old code\utilities\logging">
-      <UniqueIdentifier>{0886bb13-dc5d-4953-ad20-4f68d1f93c38}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\irrlicht">
       <UniqueIdentifier>{25ca1772-43e9-49e6-9124-b36860bf615a}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\irrlicht">
       <UniqueIdentifier>{ec4f1925-027a-46a6-b2b8-5fccabde7c9f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\utilities">
+      <UniqueIdentifier>{bb88678a-ac2f-490a-9da2-7565b75802a9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\utilities">
+      <UniqueIdentifier>{e8f033f5-b43c-48f2-9869-d12c8923eb58}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\utilities\logging">
+      <UniqueIdentifier>{ca9eaa98-084b-401e-9b84-f7b033f229aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\utilities\logging">
+      <UniqueIdentifier>{8bb4f467-d406-4b80-9e50-23c5fd10a112}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\main.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="source\event_receiver.cpp">
-      <Filter>Source Files\old code\Irrlicht shit\custom event receiver</Filter>
-    </ClCompile>
-    <ClCompile Include="source\eg_map.cpp">
-      <Filter>Source Files\old code\map files</Filter>
-    </ClCompile>
-    <ClCompile Include="source\log.cpp">
-      <Filter>Source Files\old code\utilities\logging</Filter>
-    </ClCompile>
-    <ClCompile Include="source\utils.cpp">
-      <Filter>Source Files\old code\utilities\general</Filter>
-    </ClCompile>
-    <ClCompile Include="source\save.cpp">
-      <Filter>Source Files\old code\game saves</Filter>
-    </ClCompile>
-    <ClCompile Include="source\game.cpp">
-      <Filter>Source Files\old code\gameplay management</Filter>
-    </ClCompile>
-    <ClCompile Include="source\lua_wrap.cpp">
-      <Filter>Source Files\old code\lua</Filter>
     </ClCompile>
     <ClCompile Include="source\engine.cpp">
       <Filter>Source Files</Filter>
@@ -135,32 +63,11 @@
     <ClCompile Include="source\custom_event_receiver.cpp">
       <Filter>Source Files\irrlicht</Filter>
     </ClCompile>
+    <ClCompile Include="source\log.cpp">
+      <Filter>Source Files\utilities\logging</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="source\event_receiver.h">
-      <Filter>Header Files\old code\Irrlicht shit\custom event receiver</Filter>
-    </ClInclude>
-    <ClInclude Include="source\eg_map.h">
-      <Filter>Header Files\old code\map files</Filter>
-    </ClInclude>
-    <ClInclude Include="source\log.h">
-      <Filter>Header Files\old code\utilities\logging</Filter>
-    </ClInclude>
-    <ClInclude Include="source\globals.h">
-      <Filter>Header Files\old code\globals</Filter>
-    </ClInclude>
-    <ClInclude Include="source\utils.h">
-      <Filter>Header Files\old code\utilities\general</Filter>
-    </ClInclude>
-    <ClInclude Include="source\save.h">
-      <Filter>Header Files\old code\game saves</Filter>
-    </ClInclude>
-    <ClInclude Include="source\game.h">
-      <Filter>Header Files\old code\gameplay management</Filter>
-    </ClInclude>
-    <ClInclude Include="source\lua_wrap.h">
-      <Filter>Header Files\old code\lua</Filter>
-    </ClInclude>
     <ClInclude Include="source\engine.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -172,6 +79,9 @@
     </ClInclude>
     <ClInclude Include="source\custom_event_receiver.h">
       <Filter>Header Files\irrlicht</Filter>
+    </ClInclude>
+    <ClInclude Include="source\log.h">
+      <Filter>Header Files\utilities\logging</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

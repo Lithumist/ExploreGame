@@ -62,6 +62,8 @@ namespace explore
 			int step();
 			void draw();
 
+			int run();
+
 			void exit(){ running = false; }
 
 			bool isRunning(){ return running; }
@@ -102,6 +104,12 @@ namespace explore
 			ISceneManager* smgr;
 			IGUIEnvironment* guienv;
 			EventReceiver receiver;
+
+
+
+
+			// The log file information.
+			std::string log_filename;
 
 
 

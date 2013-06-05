@@ -6,7 +6,7 @@
 
 	declares a logging interface (in a namespace)
 
-	Provides methods for the whole engine to log acivities
+	Provides methods for the whole engine to log acivities.
 */
 
 
@@ -16,7 +16,7 @@
 /*
 		*
 		*  For all logging operations, newlines ARE added
-		*  automaticallyat the end of the supplied message.
+		*  automatically at the end of the supplied message.
 		*
 */
 
@@ -31,7 +31,7 @@
 
 
 
-namespace eg
+namespace explore
 {
 	namespace log
 	{

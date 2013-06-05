@@ -54,7 +54,7 @@ namespace explore
 
 	void StateMainMenu::events(Engine* _engine)
 	{
-		std::cout << "events\n";
+		//std::cout << "events\n";
 	}
 
 
@@ -63,7 +63,7 @@ namespace explore
 
 	int StateMainMenu::step(Engine* _engine)
 	{
-		std::cout << "step\n";
+		//std::cout << "step\n";
 		return 0;
 	}
 

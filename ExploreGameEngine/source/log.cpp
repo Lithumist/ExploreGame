@@ -4,7 +4,7 @@
 
 
 
-namespace eg
+namespace explore
 {
 	namespace log
 	{

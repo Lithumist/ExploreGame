@@ -35,13 +35,14 @@ using namespace gui;
 
 
 
-
+/*
 #include "game.h"
 #include "globals.h"
 #include "log.h"
 #include "eg_map.h"
 #include "save.h"
 #include "lua_wrap.h"
+*/
 
 #include "engine.h"
 #include "main_menu_state.h"
@@ -52,8 +53,8 @@ using namespace gui;
 
 
 
-int step(eg::global* data);
-void draw(eg::global* data);
+//int step(eg::global* data);
+//void draw(eg::global* data);
 
 
 
@@ -77,12 +78,7 @@ int main()
 
 
 	// Do the main loop.
-	while(e.isRunning())
-	{
-		e.events();
-		e.step();
-		e.draw();
-	}
+	e.run();
 
 
 	// Free all memory and quit.
@@ -209,7 +205,7 @@ int main()
 
 
 
-
+/*
 
 
 void draw(eg::global* data)
@@ -317,3 +313,5 @@ int step(eg::global* data)
 
 	return 0;
 }
+
+*/
