@@ -8,7 +8,7 @@
 /*
 	Some functions commented out becuse they were left from
 	a previous game I got these files from. Wanted to leave
-	the code there incase I needed it
+	the code there incase I needed it.
 */
 
 #ifndef UT_H
@@ -21,8 +21,8 @@
 #include <vector>
 #include <stdlib.h>
 
-namespace eg{
-namespace ut
+namespace explore{
+namespace utils
 {
 
 	// Sets the seed for random number generation to the current time

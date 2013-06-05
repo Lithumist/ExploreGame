@@ -49,6 +49,12 @@
     <Filter Include="Source Files\utilities\logging">
       <UniqueIdentifier>{8bb4f467-d406-4b80-9e50-23c5fd10a112}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\utilities\general">
+      <UniqueIdentifier>{04fc0699-4cd7-4788-826b-fb0353ee027f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\utilities\general">
+      <UniqueIdentifier>{5231e48e-646f-460c-968c-65ed783b2ecf}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\main.cpp">
@@ -66,6 +72,9 @@
     <ClCompile Include="source\log.cpp">
       <Filter>Source Files\utilities\logging</Filter>
     </ClCompile>
+    <ClCompile Include="source\utils.cpp">
+      <Filter>Source Files\utilities\general</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\engine.h">
@@ -82,6 +91,9 @@
     </ClInclude>
     <ClInclude Include="source\log.h">
       <Filter>Header Files\utilities\logging</Filter>
+    </ClInclude>
+    <ClInclude Include="source\utils.h">
+      <Filter>Header Files\utilities\general</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

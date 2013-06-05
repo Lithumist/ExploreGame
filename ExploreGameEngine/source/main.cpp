@@ -46,6 +46,8 @@ using namespace gui;
 
 #include "engine.h"
 #include "main_menu_state.h"
+#include "log.h"
+#include "utils.h"
 
 
 
@@ -71,6 +73,10 @@ int main()
 	explore::Engine e;
 	if(!e.init())
 		return -1;
+
+
+	// Test utils
+	explore::log::log(explore::utils::toString(9000.0f));
 
 
 	// Move into the main menu state.

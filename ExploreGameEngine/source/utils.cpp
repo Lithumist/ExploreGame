@@ -1,8 +1,8 @@
 // ut.cpp
 #include "utils.h"
 
-namespace eg{
-namespace ut
+namespace explore{
+namespace utils
 {
 
 
