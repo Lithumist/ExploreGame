@@ -43,6 +43,12 @@ namespace explore
 		guienv = device->getGUIEnvironment();
 
 
+		// Set up the lua system and do a test.
+		lua = LuaWrap::getInstance();
+		lua->init();
+		lua->executeScript("test.lua");
+
+
 		// Finished.
 		return true;
 	}
@@ -63,6 +69,11 @@ namespace explore
 		
 		// Free Irrlicht.
 		device->drop();
+
+
+		// Free the lua system
+		lua->free();
+		lua = NULL;
 
 
 		// Close the log file.

@@ -75,10 +75,6 @@ int main()
 		return -1;
 
 
-	// Test utils
-	explore::log::log(explore::utils::toString(9000.0f));
-
-
 	// Move into the main menu state.
 	e.changeState(explore::StateMainMenu::getInstance());
 

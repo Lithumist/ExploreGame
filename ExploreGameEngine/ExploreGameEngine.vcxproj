@@ -14,6 +14,7 @@
     <ClCompile Include="source\custom_event_receiver.cpp" />
     <ClCompile Include="source\engine.cpp" />
     <ClCompile Include="source\log.cpp" />
+    <ClCompile Include="source\lua_wrapper.cpp" />
     <ClCompile Include="source\main.cpp" />
     <ClCompile Include="source\main_menu_state.cpp" />
     <ClCompile Include="source\utils.cpp" />
@@ -23,6 +24,7 @@
     <ClInclude Include="source\engine.h" />
     <ClInclude Include="source\game_state.h" />
     <ClInclude Include="source\log.h" />
+    <ClInclude Include="source\lua_wrapper.h" />
     <ClInclude Include="source\main_menu_state.h" />
     <ClInclude Include="source\utils.h" />
   </ItemGroup>

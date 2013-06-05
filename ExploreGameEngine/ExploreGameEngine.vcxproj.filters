@@ -37,23 +37,29 @@
     <Filter Include="Source Files\irrlicht">
       <UniqueIdentifier>{ec4f1925-027a-46a6-b2b8-5fccabde7c9f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\utilities">
+    <Filter Include="Header Files\side systems">
       <UniqueIdentifier>{bb88678a-ac2f-490a-9da2-7565b75802a9}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\utilities">
-      <UniqueIdentifier>{e8f033f5-b43c-48f2-9869-d12c8923eb58}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\utilities\logging">
+    <Filter Include="Header Files\side systems\logging">
       <UniqueIdentifier>{ca9eaa98-084b-401e-9b84-f7b033f229aa}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\utilities\logging">
+    <Filter Include="Source Files\side systems">
+      <UniqueIdentifier>{e8f033f5-b43c-48f2-9869-d12c8923eb58}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\side systems\logging">
       <UniqueIdentifier>{8bb4f467-d406-4b80-9e50-23c5fd10a112}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\utilities\general">
+    <Filter Include="Source Files\side systems\utlilties">
+      <UniqueIdentifier>{5231e48e-646f-460c-968c-65ed783b2ecf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\side systems\utilities">
       <UniqueIdentifier>{04fc0699-4cd7-4788-826b-fb0353ee027f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\utilities\general">
-      <UniqueIdentifier>{5231e48e-646f-460c-968c-65ed783b2ecf}</UniqueIdentifier>
+    <Filter Include="Header Files\side systems\lua">
+      <UniqueIdentifier>{4a713ee6-9208-4d16-8a3a-5eabab456bc2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\side systems\lua">
+      <UniqueIdentifier>{f64852ef-eea4-4922-9bb2-df50f427e2a2}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -70,10 +76,13 @@
       <Filter>Source Files\irrlicht</Filter>
     </ClCompile>
     <ClCompile Include="source\log.cpp">
-      <Filter>Source Files\utilities\logging</Filter>
+      <Filter>Source Files\side systems\logging</Filter>
     </ClCompile>
     <ClCompile Include="source\utils.cpp">
-      <Filter>Source Files\utilities\general</Filter>
+      <Filter>Source Files\side systems\utlilties</Filter>
+    </ClCompile>
+    <ClCompile Include="source\lua_wrapper.cpp">
+      <Filter>Source Files\side systems\lua</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -90,10 +99,13 @@
       <Filter>Header Files\irrlicht</Filter>
     </ClInclude>
     <ClInclude Include="source\log.h">
-      <Filter>Header Files\utilities\logging</Filter>
+      <Filter>Header Files\side systems\logging</Filter>
     </ClInclude>
     <ClInclude Include="source\utils.h">
-      <Filter>Header Files\utilities\general</Filter>
+      <Filter>Header Files\side systems\utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="source\lua_wrapper.h">
+      <Filter>Header Files\side systems\lua</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

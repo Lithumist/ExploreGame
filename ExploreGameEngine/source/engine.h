@@ -21,6 +21,7 @@
 
 
 #include "custom_event_receiver.h"
+#include "lua_wrapper.h"
 
 
 
@@ -110,6 +111,12 @@ namespace explore
 
 			// The log file information.
 			std::string log_filename;
+
+
+
+
+			// Lua wrapper object pointer
+			LuaWrap* lua;
 
 
 
