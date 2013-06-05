@@ -115,8 +115,9 @@ namespace explore
 
 
 
-			// Lua wrapper object pointer
+			// Lua wrapper object pointer and engine startup script filename
 			LuaWrap* lua;
+			std::string engine_startup_script;
 
 
 

@@ -1,1 +1,0 @@
--- test2 script 0001EG_Log("Script 0002!");

@@ -21,14 +21,14 @@ LuaWrap LuaWrap::instance;
 
 
 
-// Default constructor
+// Private constructor.
 LuaWrap::LuaWrap()
 {
 	state = NULL;
 }
 
 
-// Initializes lua and registers functions from LuaWrap class
+// Initializes lua and registers functions from LuaWrap class.
 void LuaWrap::init()
 {
 	state = luaL_newstate();
@@ -38,7 +38,7 @@ void LuaWrap::init()
 }
 
 
-// Free memory used by lua
+// Free memory used by lua.
 void LuaWrap::free()
 {
 	lua_close(state);
@@ -48,7 +48,7 @@ void LuaWrap::free()
 
 
 
-// Register function to call from lua
+// Register function to call from lua.
 void LuaWrap::registerFunction(std::string name, lua_CFunction function)
 {
 	lua_register(state, name.c_str(), function);
@@ -58,11 +58,48 @@ void LuaWrap::registerFunction(std::string name, lua_CFunction function)
 
 
 
-// Execute a lua script
+// Execute a lua script.
 void LuaWrap::executeScript(std::string filename)
 {
-	log::log("Running lua script " + filename);
-	luaL_dofile(state, filename.c_str());
+	log::log("Compiling lua script " + filename);
+
+
+	
+	// Load and compiler lua script.
+	int er = luaL_loadfile(state, filename.c_str());
+
+	if(er)
+	{
+		// Error loading and/or compiling lua script.
+		if(lua_isstring(state, lua_gettop(state)))
+		{
+			std::string error_msg = lua_tostring(state, lua_gettop(state));
+			lua_pop(state, 1);
+
+			log::error("Lua error, " + error_msg);
+			return;
+		}
+	}
+	else
+	{
+		// Run script.
+		log::log("Running lua script " + filename);
+		int er2 = lua_pcall(state, 0, LUA_MULTRET, 0);
+
+		if(er2)
+		{
+			if(lua_isstring(state, lua_gettop(state)))
+			{
+				std::string error_msg = lua_tostring(state, lua_gettop(state));
+				lua_pop(state, 1);
+
+				log::error("Lua error, " + error_msg);
+				return;
+			}
+		}
+	}
+
+
 	log::log("Finished lua script " + filename);
 }
 
@@ -71,7 +108,7 @@ void LuaWrap::executeScript(std::string filename)
 
 
 
-// Execute some given lua code
+// Execute some given lua code.
 void LuaWrap::executeCode(std::string lua_code)
 {
 	log::log("Executing lua code: " + lua_code);
@@ -94,7 +131,7 @@ void LuaWrap::executeCode(std::string lua_code)
 
 
 
-// Wrap the logging function to LUA
+// Wrap the logging function to lua.
 int LuaWrap::luaLog(lua_State* l)
 {
 	int n = lua_gettop(l);
@@ -106,7 +143,7 @@ int LuaWrap::luaLog(lua_State* l)
 	}
 
 
-	std::string msg = lua_tostring(l,1); // first argument is index 1
+	std::string msg = lua_tostring(l,1); // First argument is index 1.
 
 
 	log::log(msg);

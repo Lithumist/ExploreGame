@@ -43,10 +43,11 @@ namespace explore
 		guienv = device->getGUIEnvironment();
 
 
-		// Set up the lua system and do a test.
+		// Set up the lua system and execute the engine startup script
 		lua = LuaWrap::getInstance();
 		lua->init();
-		lua->executeScript("test.lua");
+		engine_startup_script = "res/scripts/engine_startup.lua";
+		lua->executeScript(engine_startup_script);
 
 
 		// Finished.
