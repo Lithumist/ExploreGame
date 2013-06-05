@@ -19,17 +19,11 @@
     <Filter Include="Header Files\states\menus">
       <UniqueIdentifier>{24b7c745-47f6-40bc-8449-92743f4864d5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\states\menus\main menu">
-      <UniqueIdentifier>{2a64c9ba-5d5e-4e42-82df-953a47f758fd}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\states">
       <UniqueIdentifier>{22f6d8e1-dfb8-44ac-aaa3-aef204cf1041}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\states\menus">
       <UniqueIdentifier>{e079a231-a77b-4b90-a926-299038f5dc4d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\states\menus\main menu">
-      <UniqueIdentifier>{61e3e9dc-9576-4ecb-a368-c86f32063013}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\irrlicht">
       <UniqueIdentifier>{25ca1772-43e9-49e6-9124-b36860bf615a}</UniqueIdentifier>
@@ -40,26 +34,32 @@
     <Filter Include="Header Files\side systems">
       <UniqueIdentifier>{bb88678a-ac2f-490a-9da2-7565b75802a9}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\side systems\logging">
-      <UniqueIdentifier>{ca9eaa98-084b-401e-9b84-f7b033f229aa}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\side systems">
       <UniqueIdentifier>{e8f033f5-b43c-48f2-9869-d12c8923eb58}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\side systems\logging">
-      <UniqueIdentifier>{8bb4f467-d406-4b80-9e50-23c5fd10a112}</UniqueIdentifier>
+    <Filter Include="Header Files\states\gameplay">
+      <UniqueIdentifier>{e700102c-1866-49eb-b77a-522f560de29d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\side systems\utlilties">
-      <UniqueIdentifier>{5231e48e-646f-460c-968c-65ed783b2ecf}</UniqueIdentifier>
+    <Filter Include="Source Files\states\gameplay">
+      <UniqueIdentifier>{d5f891a4-7d90-4ef7-a591-1373380021f9}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\side systems\utilities">
-      <UniqueIdentifier>{04fc0699-4cd7-4788-826b-fb0353ee027f}</UniqueIdentifier>
+    <Filter Include="Header Files\states\loading">
+      <UniqueIdentifier>{597c20e5-5e37-491d-9361-6c5eb3143aaf}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\side systems\lua">
-      <UniqueIdentifier>{4a713ee6-9208-4d16-8a3a-5eabab456bc2}</UniqueIdentifier>
+    <Filter Include="Source Files\states\loading">
+      <UniqueIdentifier>{4ce88553-1c3d-4f3f-9f25-3b103f31e267}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\side systems\lua">
-      <UniqueIdentifier>{f64852ef-eea4-4922-9bb2-df50f427e2a2}</UniqueIdentifier>
+    <Filter Include="Header Files\gameplay logic">
+      <UniqueIdentifier>{264c7353-2db5-438d-85f1-bfadd828e552}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gameplay logic\levels">
+      <UniqueIdentifier>{6980bb75-9fa1-4f8c-a764-cea9cd76dac1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gameplay logic">
+      <UniqueIdentifier>{eadd4df7-3155-4178-b034-e5e9defef115}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gameplay logic\levels">
+      <UniqueIdentifier>{1ff0fbe4-8a30-4dbb-8c9c-5ea307140a50}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -69,20 +69,26 @@
     <ClCompile Include="source\engine.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="source\main_menu_state.cpp">
-      <Filter>Source Files\states\menus\main menu</Filter>
-    </ClCompile>
     <ClCompile Include="source\custom_event_receiver.cpp">
       <Filter>Source Files\irrlicht</Filter>
     </ClCompile>
-    <ClCompile Include="source\log.cpp">
-      <Filter>Source Files\side systems\logging</Filter>
+    <ClCompile Include="source\gameplay_state.cpp">
+      <Filter>Source Files\states\gameplay</Filter>
     </ClCompile>
-    <ClCompile Include="source\utils.cpp">
-      <Filter>Source Files\side systems\utlilties</Filter>
+    <ClCompile Include="source\main_menu_state.cpp">
+      <Filter>Source Files\states\menus</Filter>
+    </ClCompile>
+    <ClCompile Include="source\log.cpp">
+      <Filter>Source Files\side systems</Filter>
     </ClCompile>
     <ClCompile Include="source\lua_wrapper.cpp">
-      <Filter>Source Files\side systems\lua</Filter>
+      <Filter>Source Files\side systems</Filter>
+    </ClCompile>
+    <ClCompile Include="source\utils.cpp">
+      <Filter>Source Files\side systems</Filter>
+    </ClCompile>
+    <ClCompile Include="source\level.cpp">
+      <Filter>Source Files\gameplay logic\levels</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -92,20 +98,26 @@
     <ClInclude Include="source\game_state.h">
       <Filter>Header Files\states</Filter>
     </ClInclude>
-    <ClInclude Include="source\main_menu_state.h">
-      <Filter>Header Files\states\menus\main menu</Filter>
-    </ClInclude>
     <ClInclude Include="source\custom_event_receiver.h">
       <Filter>Header Files\irrlicht</Filter>
     </ClInclude>
-    <ClInclude Include="source\log.h">
-      <Filter>Header Files\side systems\logging</Filter>
+    <ClInclude Include="source\gameplay_state.h">
+      <Filter>Header Files\states\gameplay</Filter>
     </ClInclude>
-    <ClInclude Include="source\utils.h">
-      <Filter>Header Files\side systems\utilities</Filter>
+    <ClInclude Include="source\log.h">
+      <Filter>Header Files\side systems</Filter>
     </ClInclude>
     <ClInclude Include="source\lua_wrapper.h">
-      <Filter>Header Files\side systems\lua</Filter>
+      <Filter>Header Files\side systems</Filter>
+    </ClInclude>
+    <ClInclude Include="source\utils.h">
+      <Filter>Header Files\side systems</Filter>
+    </ClInclude>
+    <ClInclude Include="source\main_menu_state.h">
+      <Filter>Header Files\states\menus</Filter>
+    </ClInclude>
+    <ClInclude Include="source\level.h">
+      <Filter>Header Files\gameplay logic\levels</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

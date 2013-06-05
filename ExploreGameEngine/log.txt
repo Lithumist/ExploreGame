@@ -10,3 +10,11 @@ Running lua script res/scripts/engine_startup.lua
 Hello world from lua!
 Finished lua script res/scripts/engine_startup.lua
 Loaded texture: C:/Users/Pedro/Documents/Visual Studio 2010/Projects/ExploreGame/ExploreGameEngine/res/fonts/comicsans.png
+Loading level res/levels/test_map_1.egl
+Loaded texture: C:/Users/Pedro/Documents/Visual Studio 2010/Projects/ExploreGame/ExploreGameEngine/res/textures/crate.jpg
+Loaded mesh: ../Levels/test_map_1.irr.meshes/1.irrmesh
+Loaded mesh: ../Levels/test_map_1.irr.meshes/2.irrmesh
+Node number 0 ''
+Node number 1 'cubeMesh1'
+Node number 2 'MeshStart'
+Finished loading level

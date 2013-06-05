@@ -40,7 +40,7 @@ namespace explore
 			virtual void draw(Engine* _engine) = 0;
 
 
-			void ChangeState(Engine* _engine, State* _state)
+			void changeState(Engine* _engine, State* _state)
 			{
 				_engine->changeState(_state);
 			}

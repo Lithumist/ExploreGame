@@ -3,6 +3,8 @@
 
 #include <iostream>
 
+#include "gameplay_state.h"
+
 
 
 
@@ -70,14 +72,17 @@ namespace explore
 	{
 
 
-		// Check for key presses
+		// Check for key presses.
 		if(_engine->getReceiver()->IsKeyDown(irr::KEY_KEY_N))
 		{
+			// Player want's a new game.
+			changeState(_engine, StateGameplay::getInstance());
 		}
 
 
 		if(_engine->getReceiver()->IsKeyDown(irr::KEY_KEY_L))
 		{
+			// Player want's to load a game
 		}
 
 
