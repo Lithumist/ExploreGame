@@ -169,6 +169,11 @@ namespace explore
 		camera->setPosition(vector3df(camera->getPosition().X+_x_displacement, camera->getPosition().Y+_y_displacement, camera->getPosition().Y+_y_displacement));
 	}
 
+	void Level::moveCameraTarget(float _x_displacement, float _y_displacement, float _z_displacement)
+	{
+		camera->setTarget(vector3df(camera->getTarget().X+_x_displacement, camera->getTarget().Y+_y_displacement, camera->getTarget().Y+_y_displacement));
+	}
+
 	void Level::setCameraPosition(float _x, float _y, float _z)
 	{
 		camera->setPosition(vector3df(_x,_y,_z));

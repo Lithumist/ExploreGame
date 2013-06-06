@@ -44,7 +44,7 @@ namespace explore
 		public:
 
 			void init(Engine* _engine);
-			void free();
+			void free(Engine* _engine);
 
 			void pause();
 			void resume();

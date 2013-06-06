@@ -137,7 +137,7 @@ int LuaWrap::luaLog(lua_State* l)
 	int n = lua_gettop(l);
 	if(n != 1)
 	{
-		lua_pushstring(l, "EG_Log only takes 1 argument.");
+		lua_pushstring(l, "EG_Log takes 1 argument.");
 		lua_error(l);
 		return 0;
 	}

@@ -30,7 +30,7 @@ namespace explore
 		public:
 
 			virtual void init(Engine* _engine) = 0;
-			virtual void free() = 0;
+			virtual void free(Engine* _engine) = 0;
 
 			virtual void pause() = 0;
 			virtual void resume() = 0;

@@ -32,7 +32,7 @@ namespace explore
 			loaded_correctly = false;
 	}
 
-	void StateMainMenu::free()
+	void StateMainMenu::free(Engine* _engine)
 	{
 		std::cout << "free\n";
 	}

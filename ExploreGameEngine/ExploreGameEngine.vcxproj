@@ -13,9 +13,11 @@
   <ItemGroup>
     <ClCompile Include="source\custom_event_receiver.cpp" />
     <ClCompile Include="source\engine.cpp" />
+    <ClCompile Include="source\gameplay_manager.cpp" />
     <ClCompile Include="source\gameplay_state.cpp" />
     <ClCompile Include="source\level.cpp" />
     <ClCompile Include="source\log.cpp" />
+    <ClCompile Include="source\lua_functions.cpp" />
     <ClCompile Include="source\lua_wrapper.cpp" />
     <ClCompile Include="source\main.cpp" />
     <ClCompile Include="source\main_menu_state.cpp" />
@@ -24,6 +26,7 @@
   <ItemGroup>
     <ClInclude Include="source\custom_event_receiver.h" />
     <ClInclude Include="source\engine.h" />
+    <ClInclude Include="source\gameplay_manager.h" />
     <ClInclude Include="source\gameplay_state.h" />
     <ClInclude Include="source\game_state.h" />
     <ClInclude Include="source\level.h" />

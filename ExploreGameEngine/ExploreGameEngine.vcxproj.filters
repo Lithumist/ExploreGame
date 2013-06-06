@@ -61,6 +61,12 @@
     <Filter Include="Source Files\gameplay logic\levels">
       <UniqueIdentifier>{1ff0fbe4-8a30-4dbb-8c9c-5ea307140a50}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\gameplay logic\manager">
+      <UniqueIdentifier>{f0a17af9-8fc7-41b4-9d52-c9e786103d68}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gameplay logic\manager">
+      <UniqueIdentifier>{74d50989-9d74-4254-ae45-f138bcd7f2ce}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\main.cpp">
@@ -90,6 +96,12 @@
     <ClCompile Include="source\level.cpp">
       <Filter>Source Files\gameplay logic\levels</Filter>
     </ClCompile>
+    <ClCompile Include="source\gameplay_manager.cpp">
+      <Filter>Source Files\gameplay logic\manager</Filter>
+    </ClCompile>
+    <ClCompile Include="source\lua_functions.cpp">
+      <Filter>Source Files\states\gameplay</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\engine.h">
@@ -118,6 +130,9 @@
     </ClInclude>
     <ClInclude Include="source\level.h">
       <Filter>Header Files\gameplay logic\levels</Filter>
+    </ClInclude>
+    <ClInclude Include="source\gameplay_manager.h">
+      <Filter>Header Files\gameplay logic\manager</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

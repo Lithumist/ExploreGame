@@ -64,7 +64,7 @@ namespace explore
 		// Cleanup the all states.
 		while(!states.empty())
 		{
-			states.back()->free();
+			states.back()->free(this);
 			states.pop_back();
 		}
 
@@ -93,7 +93,7 @@ namespace explore
 	{
 		if(!states.empty())
 		{
-			states.back()->free();
+			states.back()->free(this);
 			states.pop_back();
 		}
 
@@ -118,7 +118,7 @@ namespace explore
 	{
 		if(!states.empty())
 		{
-			states.back()->free();
+			states.back()->free(this);
 			states.pop_back();
 		}
 

@@ -20,15 +20,22 @@ namespace explore
 
 	void StateGameplay::init(Engine* _engine)
 	{
+		// Initialize the gameplay manager.
+		manager.init(_engine);
+
+		// Register our lua functions.
+		lua::registerFunctions(_engine);
+
 		// Load a test level.
-		level_current.load("res/levels/test_map_1.egl","test_map_1",_engine);
+		manager.level_current.load("res/levels/test_map_1.egl","test_map_1",_engine);
 
 		loaded_correctly = true;
 	}
 
-	void StateGameplay::free()
+	void StateGameplay::free(Engine* _engine)
 	{
-		std::cout << "free\n";
+		// Free the gameplay manager.
+		manager.free(_engine);
 	}
 
 
@@ -56,6 +63,7 @@ namespace explore
 
 	void StateGameplay::events(Engine* _engine)
 	{
+		manager.events(_engine);
 	}
 
 
@@ -64,9 +72,7 @@ namespace explore
 
 	int StateGameplay::step(Engine* _engine)
 	{
-
-		level_current.moveCamera(0.0f,0.0f,0.0f);
-
+		manager.step(_engine);
 		return 0;
 	}
 
@@ -80,10 +86,10 @@ namespace explore
 		if(!loaded_correctly)
 			return;
 
-		_engine->getDriver()->beginScene(true, true, SColor(255,0,0,0));
+		_engine->getDriver()->beginScene(true, true, _engine->getSmgr()->getAmbientLight().toSColor());
 
-		// Draw the 3d level scene.
-		level_current.draw();
+		// Draw the game.
+		manager.draw(_engine);
 
 		_engine->getDriver()->endScene();
 	}

@@ -78,6 +78,8 @@ namespace explore
 			IGUIEnvironment* getGuienv(){ return guienv; }
 			EventReceiver* getReceiver(){ return &receiver; }
 
+			LuaWrap* getLua(){ return lua; }
+
 
 
 
