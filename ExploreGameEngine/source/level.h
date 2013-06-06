@@ -46,7 +46,9 @@ namespace explore
 			void draw();
 
 
-			// TODO: Add camera control and movement methods
+			void moveCamera(float _x_displacement, float _y_displacement, float _z_displacement);
+			void setCameraPosition(float _x, float _y, float _z);
+			void setCameraTarget(float _x, float _y, float _z);
 
 
 

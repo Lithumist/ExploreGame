@@ -65,6 +65,7 @@ namespace explore
 	int StateGameplay::step(Engine* _engine)
 	{
 
+		level_current.moveCamera(0.0f,0.0f,0.0f);
 
 		return 0;
 	}

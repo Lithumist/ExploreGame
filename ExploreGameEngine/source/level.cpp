@@ -160,6 +160,36 @@ namespace explore
 
 
 
+
+
+
+
+	void Level::moveCamera(float _x_displacement, float _y_displacement, float _z_displacement)
+	{
+		camera->setPosition(vector3df(camera->getPosition().X+_x_displacement, camera->getPosition().Y+_y_displacement, camera->getPosition().Y+_y_displacement));
+	}
+
+	void Level::setCameraPosition(float _x, float _y, float _z)
+	{
+		camera->setPosition(vector3df(_x,_y,_z));
+	}
+
+	void Level::setCameraTarget(float _x, float _y, float _z)
+	{
+		camera->setTarget(vector3df(_x,_y,_z));
+	}
+
+
+
+
+
+
+
+
+
+
+
+
 	void Level::step()
 	{
 		if(!is_loaded)
