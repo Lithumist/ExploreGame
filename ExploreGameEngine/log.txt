@@ -14,7 +14,10 @@ Loading level res/levels/test_map_1.egl
 Loaded texture: C:/Users/Pedro/Documents/Visual Studio 2010/Projects/ExploreGame/ExploreGameEngine/res/textures/crate.jpg
 Loaded mesh: ../Levels/test_map_1.irr.meshes/1.irrmesh
 Loaded mesh: ../Levels/test_map_1.irr.meshes/2.irrmesh
+Loaded texture: C:/Users/Pedro/Documents/Visual Studio 2010/Projects/ExploreGame/ExploreGameEngine/res/textures/grass.jpg
+Loaded mesh: ../Levels/test_map_1.irr.meshes/3.irrmesh
 Node number 0 ''
 Node number 1 'cubeMesh1'
 Node number 2 'MeshStart'
+Node number 3 'planeMesh1'
 Finished loading level
