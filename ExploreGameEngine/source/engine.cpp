@@ -18,7 +18,7 @@ namespace explore
 		states.clear();
 
 
-		// Open the log file
+		// Open the log file.
 		log_filename = "log.txt";
 		log::open(log_filename);
 
@@ -44,7 +44,7 @@ namespace explore
 		guienv = device->getGUIEnvironment();
 
 
-		// Set up the lua system and execute the engine startup script
+		// Set up the lua system and execute the engine startup script.
 		lua = LuaWrap::getInstance();
 		lua->init();
 		engine_startup_script = "res/scripts/engine_startup.lua";
@@ -69,6 +69,10 @@ namespace explore
 		}
 
 		
+		// Free BP.
+		bp->drop();
+
+
 		// Free Irrlicht.
 		device->drop();
 

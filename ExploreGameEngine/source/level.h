@@ -20,6 +20,12 @@
 
 
 
+#define MESH_PHYSICS_MASS 1000
+
+
+
+
+
 namespace explore
 {
 

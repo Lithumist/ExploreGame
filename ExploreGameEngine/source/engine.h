@@ -25,6 +25,7 @@
 
 
 
+#include <IrrBP.h>
 #include <irrlicht.h>
 
 
@@ -78,6 +79,8 @@ namespace explore
 			IGUIEnvironment* getGuienv(){ return guienv; }
 			EventReceiver* getReceiver(){ return &receiver; }
 
+			CIrrBPManager* getBp(){ return bp; }
+
 			LuaWrap* getLua(){ return lua; }
 
 
@@ -107,6 +110,12 @@ namespace explore
 			ISceneManager* smgr;
 			IGUIEnvironment* guienv;
 			EventReceiver receiver;
+
+
+
+
+			// IrrBP Pointers and objects.
+			CIrrBPManager* bp;
 
 
 
