@@ -1,15 +1,23 @@
-Explore Game engine started
-Created Irrlicht device
-Window set up
-Loaded font file res/fonts/trololol.xml
-Loading map res/maps/test2/test2.irr
-Node number 0, name ''
-Node number 1, name 'MeshVisual'
-Node number 2, name 'MeshPhysics'
-Node number 3, name 'MeshStart'
-Node number 4, name 'MeshVisual'
-Node number 5, name 'MeshVisual'
-Node number 6, name 'MeshVisual'
-Node number 7, name 'MeshPhysics'
-Finished loading map res/maps/test2/test2.irr
-Explore Game engine exited
+Irrlicht Engine version 1.8.0
+Microsoft Windows 7 Home Premium Edition Service Pack 1 (Build 7601)
+Using renderer: OpenGL 2.1.8796
+AMD M880G with ATI Mobility Radeon HD 4200  : ATI Technologies Inc.
+OpenGL driver version is 1.2 or better.
+GLSL version: 1.3
+Resizing window (960 656)
+Compiling lua script res/scripts/engine_startup.lua
+Running lua script res/scripts/engine_startup.lua
+Hello world from lua!
+Finished lua script res/scripts/engine_startup.lua
+Loaded texture: C:/Users/Pedro/Documents/Visual Studio 2010/Projects/ExploreGame/Build/Game/res/fonts/comicsans.png
+Loading level res/levels/test_map_1.egl
+Loaded texture: C:/Users/Pedro/Documents/Visual Studio 2010/Projects/ExploreGame/Build/Game/res/textures/crate.jpg
+Loaded mesh: ../Levels/test_map_1.irr.meshes/1.irrmesh
+Loaded mesh: ../Levels/test_map_1.irr.meshes/2.irrmesh
+Loaded texture: C:/Users/Pedro/Documents/Visual Studio 2010/Projects/ExploreGame/Build/Game/res/textures/grass.jpg
+Loaded mesh: ../Levels/test_map_1.irr.meshes/3.irrmesh
+Node number 0 ''
+Node number 1 'cubeMesh1'
+Node number 2 'MeshStart'
+Node number 3 'planeMesh1'
+Finished loading level

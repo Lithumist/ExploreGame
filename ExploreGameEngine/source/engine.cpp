@@ -70,7 +70,7 @@ namespace explore
 
 		
 		// Free BP.
-		bp->drop();
+		//bp->drop();
 
 
 		// Free Irrlicht.

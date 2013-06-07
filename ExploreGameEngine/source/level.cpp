@@ -43,7 +43,7 @@ namespace explore
 
 
 		// Initialize the bullet world.
-		_engine->getBp()->setWorldGravity(vector3df(0.0f,-10.0f,0.0f));
+		//_engine->getBp()->setWorldGravity(vector3df(0.0f,-10.0f,0.0f));
 
 
 		// Add the map filesystem and construct the local path.
@@ -109,13 +109,13 @@ namespace explore
 			if(node_name == "MeshPhysics")
 			{
 				IMeshSceneNode* msn = (IMeshSceneNode*)node;
-				engine->getBp()->addTrimesh(msn,MESH_PHYSICS_MASS);
+				//engine->getBp()->addTrimesh(msn,MESH_PHYSICS_MASS);
 			}
 
 			if(node_name == "MeshPhysicsFixed")
 			{
 				IMeshSceneNode* msn = (IMeshSceneNode*)node;
-				engine->getBp()->addTrimesh(msn,0.0f);
+				//engine->getBp()->addTrimesh(msn,0.0f);
 			}
 
 
@@ -127,7 +127,7 @@ namespace explore
 				node->setVisible(false);
 
 				IMeshSceneNode* msn = (IMeshSceneNode*)node;
-				engine->getBp()->addTrimesh(msn,MESH_PHYSICS_MASS);
+				//engine->getBp()->addTrimesh(msn,MESH_PHYSICS_MASS);
 			}
 
 			if(node_name == "MeshPhysicsInvisibleFixed")
@@ -135,7 +135,7 @@ namespace explore
 				node->setVisible(false);
 
 				IMeshSceneNode* msn = (IMeshSceneNode*)node;
-				engine->getBp()->addTrimesh(msn,0.0f);
+				//engine->getBp()->addTrimesh(msn,0.0f);
 			}
 
 
@@ -178,7 +178,7 @@ namespace explore
 			return;
 
 		// Clear the bullet world
-		engine->getBp()->clear();
+		//engine->getBp()->clear();
 
 		// Clear the scene manager.
 		engine->getSmgr()->clear();
@@ -246,7 +246,7 @@ namespace explore
 			return;
 
 		// Step the physics simulation
-		engine->getBp()->stepSimulation();
+		//engine->getBp()->stepSimulation();
 
 	}
 

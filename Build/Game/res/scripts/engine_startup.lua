@@ -1,0 +1,1 @@
+-- test2 map startup scriptEG_Log("Hello world from lua!");

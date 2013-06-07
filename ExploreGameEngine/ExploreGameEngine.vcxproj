@@ -62,12 +62,12 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>C:\DevLib\Bullet\irrBP\bullet-2.79-include;C:\DevLib\Bullet\irrBP\include;C:\DevLib\Irrlicht\irrlicht-1.8\include;C:\DevLib\lua\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\DevLib\Bullet\irrBP\libs_for_r53\libs;C:\DevLib\Bullet\irrBP\lib\debug;C:\DevLib\Irrlicht\irrlicht-1.8\lib\Win32-visualstudio;C:\DevLib\lua\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\DevLib\Irrlicht\irrlicht-1.8\include;C:\DevLib\lua\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\DevLib\Irrlicht\irrlicht-1.8\lib\Win32-visualstudio;C:\DevLib\lua\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <IncludePath>C:\DevLib\Bullet\irrBP\bullet-2.79-include;C:\DevLib\Bullet\irrBP\include;C:\DevLib\Irrlicht\irrlicht-1.8\include;C:\DevLib\lua\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\DevLib\Bullet\irrBP\libs_for_r53\libs;C:\DevLib\Bullet\irrBP\lib\debug;C:\DevLib\Irrlicht\irrlicht-1.8\lib\Win32-visualstudio;C:\DevLib\lua\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\DevLib\Irrlicht\irrlicht-1.8\include;C:\DevLib\lua\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\DevLib\Irrlicht\irrlicht-1.8\lib\Win32-visualstudio;C:\DevLib\lua\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -77,7 +77,7 @@
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>Irrlicht.lib;lua52.lib;BulletCollision.lib;BulletDynamics.lib;BulletMultithreaded.lib;BulletSoftBody.lib;LinearMath.lib;IrrBPLib.lib</AdditionalDependencies>
+      <AdditionalDependencies>Irrlicht.lib;lua52.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -91,7 +91,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>Irrlicht.lib;lua52.lib;BulletCollision.lib;BulletDynamics.lib;BulletMultithreaded.lib;BulletSoftBody.lib;LinearMath.lib;IrrBPLib.lib</AdditionalDependencies>
+      <AdditionalDependencies>Irrlicht.lib;lua52.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
